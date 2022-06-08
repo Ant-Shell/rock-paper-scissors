@@ -1,7 +1,7 @@
 class Player {
-  constructor(name, token, wins, losses, drawGames) {
+  constructor(name, avatar, wins, losses, drawGames) {
     this.name = name;
-    this.token = token;
+    this.avatar = avatar;
     this.wins = wins;
     this.losses = losses;
     this.drawGames = drawGames;
@@ -11,8 +11,5 @@ class Player {
 
   }
 }
-
-
-
 
 module.exports = Player;
