@@ -18,6 +18,10 @@ class Game {
   setup() {
 
   }
+
+  determineWinner() {
+    
+  }
 }
 
 module.exports = Game;
