@@ -7,6 +7,14 @@ class Player {
     this.drawGames = drawGames;
   }
 
+  chooseAvatar() {
+
+  }
+
+  chooseGame() {
+
+  }
+
   takeTurn() {
 
   }
