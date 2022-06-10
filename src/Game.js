@@ -1,13 +1,8 @@
 var Player = require("./Player.js");
 
 class Game {
-  constructor(playerDetails) {
-    this.playerName = playerDetails.name;
-    this.playerAvatar = playerDetails.avatar;
-    this.playerWins = playerDetails.wins;
-    this.playerLosses = playerDetails.losses;
-    this.playerDrawGames = playerDetails.drawGames;
-    this.Traditional = false;
+  constructor(player1, player2) {
+    this.players = new Array(player1, player2)
     this.Extreme = false;
   }
 
@@ -20,7 +15,7 @@ class Game {
   }
 
   determineWinner() {
-    
+
   }
 }
 
