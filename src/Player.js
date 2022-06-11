@@ -1,26 +1,25 @@
 class Player {
-  constructor(name)) {
+  constructor(name, avatar) {
     this.name = name;
-    this.avatar = null;
-    this.wins = 0;
-    this.losses = 0;
-    this.drawGames = 0;
-  }
-
-  chooseAvatar() {
-    var avatarList = [avatar1, avatar2, avatar3, avatar4, avatar5]
-    for (var i = 0; i < avatarList.length; i++) {
-      console.log(avatarList[i])
+    this.avatar = avatar || 'null';
+    this.stats = {
+      wins: 0,
+      losses: 0,
+      draws: 0,
     }
   }
 
-  chooseGame() {
-
+  chooseAvatar(avatar) {
+    this.avatar = avatar;
   }
 
-  takeTurn() {
+  takeTurn(configArray) {
 
+    var keys = Object.keys(configArray);
+    return keys[Math.floor(Math.random() * keys.length)];
+  }
+
+  updateStat(statName) {
+    this.stats[statName] ++
   }
 }
-
-module.exports = Player;
