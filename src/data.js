@@ -1,12 +1,32 @@
 // Assets
 var player1Avatars = [
-
+  './assets/Human1.png',
+  './assets/Human2.png',
+  './assets/Human3.png',
+  './assets/Human4.png',
+  './assets/Human5.png',
+  './assets/Human6.png',
+  './assets/Human7.png',
+  './assets/Human8.png',
 ];
 
 // Assets
 var player2Avatars = [
-
+  './assets/Robot1.png',
+  './assets/Robot2.png',
+  './assets/Robot3.png',
+  './assets/Robot4.png',
+  './assets/Robot5.png',
+  './assets/Robot6.png',
 ];
+
+var opmAvatars = ['./assets/Saitama.png',];
+
+var gokuAvatars = ['./assets/Goku.png',];
+
+var alienAvatars = ['./assets/Alien.png',];
+
+var mosquitoAvatars = ['./assets/Mosquito.png',];
 
 // Traditional game config object
 configTraditional = {
@@ -73,6 +93,7 @@ var opmWinQuotes = [
 var gokuWinQuotes = [
   "Ka...me...ha...me...HAAAAAAAA!"
 ];
+
 
 var alienWinQuotes = [
   "Sleoncirfndk (You lose)."
