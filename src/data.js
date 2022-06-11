@@ -39,7 +39,7 @@ configTraditional = {
 // Merge with configTraditional object
 // https://webinuse.com/how-to-merge-objects-in-javascript/
 configExtreme = {
-  "one punch man": ["rock", "paper", "scissors", "goku", "alien"],
+  "onepunchman": ["rock", "paper", "scissors", "goku", "alien"],
   "goku": ["rock", "paper", "scissors", "alien", "mosquito"],
   "alien": ["rock", "paper", "scissors", "mosquito"],
   "mosquito": ["one punch man"],
@@ -91,12 +91,12 @@ var opmWinQuotes = [
 ];
 
 var gokuWinQuotes = [
-  "Ka...me...ha...me...HAAAAAAAA!"
+  "KamehameHAAAAAAAA!"
 ];
 
 
 var alienWinQuotes = [
-  "Sleoncirfndk (You lose)."
+  "I am the mighty Frieza!"
 ];
 
 var mosquitoWinQuotes = [
