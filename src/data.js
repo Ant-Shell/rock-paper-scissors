@@ -29,20 +29,23 @@ var alienAvatars = ['./assets/Alien.png',];
 var mosquitoAvatars = ['./assets/Mosquito.png',];
 
 // Traditional game config object
-configTraditional = {
+var configTraditional = {
   "rock": ["scissors"],
   "scissors": ["paper"],
   "paper": ["rock"],
 };
 
 // Extreme game config array
-// Merge with configTraditional object
+// Merge with configTraditional object(?)
 // https://webinuse.com/how-to-merge-objects-in-javascript/
-configExtreme = {
+var configExtreme = {
+  "rock": ["scissors"],
+  "scissors": ["paper"],
+  "paper": ["rock"],
   "onepunchman": ["rock", "paper", "scissors", "goku", "alien"],
   "goku": ["rock", "paper", "scissors", "alien", "mosquito"],
   "alien": ["rock", "paper", "scissors", "mosquito"],
-  "mosquito": ["one punch man"],
+  "mosquito": ["onepunchman"],
 };
 
 
@@ -56,7 +59,7 @@ var gameWinQuotes = [
   "You're Awesome!",
   "Noice!",
   "Human Wins!",
-  "Flawless Victory"
+  "Flawless Victory",
   "Woo Hoo!",
   "It's Morbin Time!",
 ];
@@ -72,7 +75,7 @@ var gameLossQuotes = [
   "Oof.",
   "Rekt.",
   "Doh!",
-  "Not This Time."
+  "Not This Time.",
   "You got Morbed On",
 ];
 
@@ -84,6 +87,7 @@ var gameTieQuotes = [
   "What are the Odds?",
   "You?? Me???",
   "It's like looking in a Mirror ...",
+  "You again???"
 ];
 
 var opmWinQuotes = [
