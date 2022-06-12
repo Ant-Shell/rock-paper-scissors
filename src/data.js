@@ -80,7 +80,7 @@ var gameLossQuotes = [
 ];
 
 // Strings
-var gameTieQuotes = [
+var gameDrawQuotes = [
   "Draw Game!",
   "It's a Draw!",
   "Great Minds Think Alike",
