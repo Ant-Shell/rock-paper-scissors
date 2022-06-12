@@ -1,7 +1,7 @@
 class Player {
   constructor(name, avatar) {
     this.name = name;
-    this.avatar = avatar || 'null';
+    this.avatar = avatar || null;
     this.stats = {
       wins: 0,
       losses: 0,
@@ -13,13 +13,8 @@ class Player {
     this.avatar = avatar;
   }
 
-  takeTurn(configArray) {
-
-    var keys = Object.keys(configArray);
+  takeTurn(configObj) {
+    var keys = Object.keys(configObj);
     return keys[Math.floor(Math.random() * keys.length)];
-  }
-
-  updateStat(statName) {
-    this.stats[statName] ++
   }
 }
