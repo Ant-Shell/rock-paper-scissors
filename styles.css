@@ -1,0 +1,42 @@
+* {
+  border: 1px solid red;
+}
+
+body {
+  background-color: #e9bf5c;
+}
+
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 75px;
+  color: #9c3c37;
+}
+
+h2 {
+
+}
+
+.width-add {
+  flex-grow: 1;
+}
+
+.height-add {
+  height: 100vh;
+}
+
+.font-style {
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.main {
+  margin-left: 225px;
+  padding: 0px 10px;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+}
