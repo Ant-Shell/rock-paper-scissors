@@ -34,34 +34,13 @@ class Game {
     } else if (this.rules[player2Result].includes(player1Result)) {
       this.players[0].stats.losses++
       this.players[1].stats.wins++
-      console.log("Player2 value", this.rules[player2Result])
-      console.log("Player1 key", player1Result)
       return [lose, player1Result, player2Result];
-    } else if (!this.rules[player2Result].includes(player1Result)) {
+    } else {
       this.players[0].stats.wins++
       this.players[1].stats.losses++
-      console.log("Player2 value", this.rules[player2Result])
-      console.log("Player1 key", player1Result)
       return [win, player1Result, player2Result];
     }
   }
-
-
-  // if (player1Result.includes(player2Result)) {
-  //   this.players[0].stats.wins++ ;
-  //   this.players[1].stats.losses++ ;
-  //   return [win, player1Result, player2Result];
-  // } else if (!player1Result.includes(player2Result)) {
-  //   this.players[0].stats.losses++ ;
-  //   this.players[1].stats.wins++ ;
-  //   return [lose, player1Result, player2Result];
-  // } else if (player1Result === player2Result) {
-  // // } else {
-  //   this.players[0].stats.draws ++;
-  //   this.players[1].stats.draws ++ ;
-  //   console.log(draw)
-  //   return [draw, player1Result, player2Result];
-  //   }
 
   getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -81,5 +60,4 @@ class Game {
     var drawQuote = gameDrawQuotes[this.getRandomIndex(gameDrawQuotes)];
     return drawQuote;
   }
-
 }
