@@ -43,7 +43,7 @@ var configExtreme = {
   "scissors": ["paper"],
   "paper": ["rock"],
   "onepunchman": ["rock", "paper", "scissors", "goku", "alien"],
-  "goku": ["rock", "paper", "scissors", "alien", "mosquito"],
+  "goku": ["paper", "scissors", "alien", "mosquito"],
   "alien": ["rock", "paper", "scissors", "mosquito"],
   "mosquito": ["onepunchman"],
 };
