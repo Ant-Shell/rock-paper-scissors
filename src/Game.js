@@ -7,18 +7,12 @@ class Game {
   }
 
   select() {
-    // logic for game selection
-    // when invoked, chooses the game type - traditional or variation (extreme?); based on user selection
-    // Selects type of game (boolean value - flip true / false?)
     if (this.type === 'extreme') {
       this.extreme = true;
     }
   }
 
   setup() {
-    // based on return value of selectGame(?) - or current values of this.Traditional / this.Extreme (?)
-    // if gameTraditional was chosen (true boolean value), set up game with traditional ruleset
-    // if gameExtreme was chosen (true boolean value), set up game with "Extreme" ruleset (TBD)
     if (this.extreme === true) {
       this.rules = configExtreme;
     } else {
@@ -27,31 +21,28 @@ class Game {
   }
 
   determineWinner() {
-  // based on return value of Player.takeTurn() - decide which player is the winner
-	// Compare values based on game mode(?)
   var player1Result = this.players[0].takeTurn(this.rules);
   var player2Result = this.players[1].takeTurn(this.rules);
-  var player2Result = Object.keys(this.rules)[0];
-  // configTraditional[keyvalue]
-
   var win = this.winquoteDisplay(gameWinQuotes);
   var lose = this.lossQuoteDisplay(gameLossQuotes);
   var draw = this.drawQuoteDisplay(gameDrawQuotes);
 
-  if (player1Result === player2Result) { // This works
+  if (player1Result === player2Result) {
     this.players[0].stats.draws ++;
     this.players[1].stats.draws ++ ;
       return [draw, player1Result, player2Result];
-    // } else if (player1Result.includes(player2Result)) { // This doesn't
-    } else if (this.rules[player1Result] !== player2Result) {
-      this.players[0].stats.wins++
-      this.players[1].stats.losses++
-      return [win, player1Result, player2Result];
-    // } else if (!player1Result.includes(player2Result)) { // This doesn't either
-    } else {
+    } else if (this.rules[player2Result].includes(player1Result)) {
       this.players[0].stats.losses++
       this.players[1].stats.wins++
+      console.log("Player2 value", this.rules[player2Result])
+      console.log("Player1 key", player1Result)
       return [lose, player1Result, player2Result];
+    } else if (!this.rules[player2Result].includes(player1Result)) {
+      this.players[0].stats.wins++
+      this.players[1].stats.losses++
+      console.log("Player2 value", this.rules[player2Result])
+      console.log("Player1 key", player1Result)
+      return [win, player1Result, player2Result];
     }
   }
 
