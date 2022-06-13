@@ -45,7 +45,7 @@ var configTraditional = {
 // Merge with configTraditional object(?)
 // https://webinuse.com/how-to-merge-objects-in-javascript/
 var configExtreme = {
-  "rock": ["scissors", "mosquito"],
+  "rock": ["scissors", "goku", "mosquito"],
   "scissors": ["paper", "mosquito"],
   "paper": ["rock", "mosquito"],
   "onepunchman": ["rock", "paper", "scissors", "goku", "alien"],
