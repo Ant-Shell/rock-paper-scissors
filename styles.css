@@ -47,7 +47,7 @@ h2 {
 }
 
 .game-options-box {
-  height: 150px;
+  height: 100px;
 }
 
 .sidebar-color {
@@ -108,9 +108,23 @@ h2 {
   display: block;
   height: 200px;
   width: 300px;
-  background-color: ;
+  border: none;
 }
 
+.game-mode-button2 {
+  display: block;
+  height: 300px;
+  width: 300px;
+  border: none;
+}
+
+.game-mode-button:hover {
+  background-color:  #381A4C;
+}
+
+.game-mode-button2:hover {
+  background-color:  #381A4C;
+}
 
 .margin-top {
   margin-top: 50px;
