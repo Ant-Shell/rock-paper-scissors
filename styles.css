@@ -8,11 +8,10 @@ html {
 
 h1 {
   font-size: 70px;
-  color: #EFF8F3;
 }
 
 h2 {
-
+  font-size: 30px;
 }
 
 .body-color {
@@ -30,6 +29,7 @@ h2 {
 .font-style {
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'Permanent Marker', cursive;
+  color: #EFF8F3
 }
 
 .container {
@@ -63,28 +63,24 @@ h2 {
 .player-text {
   font-size: 40px;
   position: absolute;
-  color: #EFF8F3;
   top: 150px;
 }
 
 .player-text2 {
   font-size: 30px;
   position: absolute;
-  color: #EFF8F3;
   top: 210px;
 }
 
 .player-text3 {
   font-size: 30px;
   position: absolute;
-  color: #EFF8F3;
   top: 260px;
 }
 
 .player-text4 {
   font-size: 30px;
   position: absolute;
-  color: #EFF8F3;
   top: 310px;
 }
 
@@ -101,4 +97,21 @@ h2 {
   width: 75px;
   position: absolute;
   top: 100px;
+}
+
+.flex-column {
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-mode-button {
+  display: block;
+  height: 200px;
+  width: 300px;
+  background-color: ;
+}
+
+
+.margin-top {
+  margin-top: 50px;
 }
