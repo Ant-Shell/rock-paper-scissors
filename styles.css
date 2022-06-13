@@ -18,12 +18,9 @@ h2 {
   background-color: #633183;
 }
 
-.width-add {
-  flex-grow: 1;
-}
-
-.height-add {
-  height: 100vh;
+.sidebar-color {
+  background-color: #9A67BD;
+  z-index: 1;
 }
 
 .font-style {
@@ -32,9 +29,39 @@ h2 {
   color: #EFF8F3
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.margin-left {
+  margin-left: 25px;
+}
+
+.margin-right {
+  margin-right: 25px;
+}
+
+.width-add {
+  flex-grow: 1;
+}
+
+.height-add {
+  height: 100vh;
+}
+
 .container {
   display: flex;
   align-items: stretch;
+}
+
+.flex-column {
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-box {
@@ -48,16 +75,8 @@ h2 {
 
 .game-options-box {
   height: 100px;
-}
-
-.sidebar-color {
-  background-color: #9A67BD;
-  z-index: 1;
-}
-
-.center {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .player-text {
@@ -91,17 +110,11 @@ h2 {
   top: 75px;
 }
 
-
 .resize-robot-img {
   height: 50px;
   width: 75px;
   position: absolute;
   top: 100px;
-}
-
-.flex-column {
-  flex-direction: column;
-  align-items: center;
 }
 
 .game-mode-button {
@@ -118,14 +131,16 @@ h2 {
   border: none;
 }
 
-.game-mode-button:hover {
-  background-color:  #381A4C;
+.game-options-button {
+  height: 50px;
+  width: 175px;
+  margin-top: 25px;
+  border: none;
 }
 
-.game-mode-button2:hover {
-  background-color:  #381A4C;
-}
-
-.margin-top {
-  margin-top: 50px;
+.game-mode-button:hover,
+.game-mode-button2:hover,
+.game-options-button:hover {
+  background-color: #381A4C;
+  cursor: pointer;
 }
