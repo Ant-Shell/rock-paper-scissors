@@ -1,21 +1,24 @@
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 
-body {
+html {
   background-color: #e9bf5c;
 }
-
 
 h1 {
   display: flex;
   justify-content: center;
-  font-size: 75px;
-  color: #9c3c37;
+  font-size: 70px;
+  color: #EFF8F3;
 }
 
 h2 {
 
+}
+
+.body-color {
+  background-color: #633183;
 }
 
 .width-add {
@@ -31,12 +34,27 @@ h2 {
   font-family: 'Permanent Marker', cursive;
 }
 
-.main {
-  margin-left: 225px;
-  padding: 0px 10px;
-}
-
 .container {
   display: flex;
   align-items: stretch;
+}
+
+.main-box {
+  height: 500px;
+}
+
+.score-box {
+  margin-top: 10px;
+  width:300px;
+  height: 500px;
+  margin-left: 30px;
+}
+
+.game-options-box {
+  height: 150px;
+}
+
+.sidebar-color {
+  background-color: #9A67BD;
+  z-index: 1;
 }
