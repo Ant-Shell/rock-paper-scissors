@@ -9,7 +9,7 @@
   </head>
   <section class="container">
   <body class="body-color">
-      <nav class="sidebar-color">
+      <nav class="sidebar-color" id="sidebarLeft">
         <section class="score-box center">
           <img class="resize-human-img" src="./assets/Human1.png" alt="Human avatar"></img>
           <span class="font-style player-text">Human</span>
@@ -25,7 +25,7 @@
         <h2 class="center">
           <span class="font-style">Choose your style!</span>
         </h2>
-        <section class="main-box flex-column center">
+        <section class="main-box flex-column center" id="gameSelect">
           <button class="game-mode-button sidebar-color">
             <h2>
               <span class="font-style">Traditional</span>
@@ -59,12 +59,12 @@
               </h3>
           </button>
         </section>
-        <footer class="game-options-box">
-          <button class="game-options-button margin-left font-style sidebar-color">Change Game?</button>
-          <button class="game-options-button margin-right font-style sidebar-color">Reset Settings?</button>
+        <footer class="game-options-box" id="gameOptions">
+          <button class="game-options-button margin-left font-style sidebar-color" id="changeGameButton">Change Game?</button>
+          <button class="game-options-button margin-right font-style sidebar-color" id="resetScoresButton">Reset Scores?</button>
         </footer>
       </main>
-      <aside class="sidebar-color">
+      <aside class="sidebar-color" id="sidebarRight">
         <section class="score-box center">
           <img class="resize-robot-img" src="./assets/Robot1.png" alt="Human avatar"></img>
           <span class="font-style player-text">Robot</span>
