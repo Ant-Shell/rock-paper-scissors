@@ -20,6 +20,12 @@ var player2Avatars = [
   './assets/Robot6.png',
 ];
 
+var rpsAvatars = [
+  './assets/rock.png',
+  './assets/paper.png',
+  './assets/scissors.png'
+];
+
 var opmAvatars = ['./assets/Saitama.png',];
 
 var gokuAvatars = ['./assets/Goku.png',];
