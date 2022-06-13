@@ -20,6 +20,12 @@ var player2Avatars = [
   './assets/Robot6.png',
 ];
 
+var rpsAvatars = [
+  './assets/rock.png',
+  './assets/paper.png',
+  './assets/scissors.png'
+];
+
 var opmAvatars = ['./assets/Saitama.png',];
 
 var gokuAvatars = ['./assets/Goku.png',];
@@ -39,9 +45,9 @@ var configTraditional = {
 // Merge with configTraditional object(?)
 // https://webinuse.com/how-to-merge-objects-in-javascript/
 var configExtreme = {
-  "rock": ["scissors"],
-  "scissors": ["paper"],
-  "paper": ["rock"],
+  "rock": ["scissors", "goku", "mosquito"],
+  "scissors": ["paper", "mosquito"],
+  "paper": ["rock", "mosquito"],
   "onepunchman": ["rock", "paper", "scissors", "goku", "alien"],
   "goku": ["paper", "scissors", "alien", "mosquito"],
   "alien": ["rock", "paper", "scissors", "mosquito"],

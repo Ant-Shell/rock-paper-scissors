@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="sidebar-color">
   <head>
     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,73 @@
     <link rel="stylesheet" href="./styles.css">
     <title>RPS</title>
   </head>
-  <div class="container">
-  <body>
-      <nav class="width-add ">
+  <section class="container">
+  <body class="body-color">
+      <nav class="sidebar-color">
+        <section class="score-box center">
+          <img class="resize-human-img" src="./assets/Human1.png" alt="Human avatar"></img>
+          <span class="font-style player-text">Human</span>
+          <span class="font-style player-text2">Wins:</span>
+          <span class="font-style player-text3">Losses:</span>
+          <span class="font-style player-text4">Draws:</span>
+        </section>
       </nav>
       <main class="width-add height-add">
-        <h1>
+        <h1 class="center">
           <span class="font-style">Rock Paper Scissors</span>
         </h1>
+        <h2 class="center">
+          <span class="font-style">Choose your style!</span>
+        </h2>
+        <section class="main-box flex-column center">
+          <button class="game-mode-button sidebar-color">
+            <h2>
+              <span class="font-style">Traditional</span>
+            </h2>
+              <h3>
+                <span class="font-style">rock > scissors</span>
+                <br>
+                <span class="font-style">paper > rock</span>
+                <br>
+                <span class="font-style">scissors > paper</span>
+              </h3>
+          </button>
+          <button class="game-mode-button2 sidebar-color margin-top">
+            <h2>
+              <span class="font-style">Extreme</span>
+            </h2>
+              <h3>
+                <span class="font-style">rock > scissors + mosquito + goku</span>
+                <br>
+                <span class="font-style">paper > rock + mosquito</span>
+                <br>
+                <span class="font-style">scissors > paper + mosquito</span>
+                <br>
+                <span class="font-style">onepunchman > all except mosquito </span>
+                <br>
+                <span class="font-style">goku > all except rock + onepunchman</span>
+                <br>
+                <span class="font-style">alien > all except goku + onepunchman</span>
+                <br>
+                <span class="font-style">mosquito > onepunchman</span>
+              </h3>
+          </button>
+        </section>
+        <footer class="game-options-box">
+          <button class="game-options-button margin-left font-style sidebar-color">Change Game?</button>
+          <button class="game-options-button margin-right font-style sidebar-color">Reset Settings?</button>
+        </footer>
       </main>
-      <aside class="width-add">
+      <aside class="sidebar-color">
+        <section class="score-box center">
+          <img class="resize-robot-img" src="./assets/Robot1.png" alt="Human avatar"></img>
+          <span class="font-style player-text">Robot</span>
+          <span class="font-style player-text2">Wins:</span>
+          <span class="font-style player-text3">Losses:</span>
+          <span class="font-style player-text4">Draws:</span>
+        </section>
       </aside>
-    </div>
+    </section>
     <script src="./src/data.js"></script>
     <script src="./src/Player.js"></script>
     <script src="./src/Game.js"></script>
