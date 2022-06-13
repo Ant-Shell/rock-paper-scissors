@@ -87,3 +87,18 @@ h2 {
   color: #EFF8F3;
   top: 310px;
 }
+
+.resize-human-img {
+  height: 75px;
+  width: 50px;
+  position: absolute;
+  top: 75px;
+}
+
+
+.resize-robot-img {
+  height: 50px;
+  width: 75px;
+  position: absolute;
+  top: 100px;
+}
