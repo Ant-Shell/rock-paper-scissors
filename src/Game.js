@@ -23,7 +23,7 @@ class Game {
   determineWinner() {
   var player1Result = this.players[0].takeTurn(this.rules);
   var player2Result = this.players[1].takeTurn(this.rules);
-  var win = this.winquoteDisplay(gameWinQuotes);
+  var win = this.winQuoteDisplay(gameWinQuotes);
   var lose = this.lossQuoteDisplay(gameLossQuotes);
   var draw = this.drawQuoteDisplay(gameDrawQuotes);
 
@@ -51,7 +51,7 @@ class Game {
     return lossQuote;
   }
 
-  winquoteDisplay(gameWinQuotes) {
+  winQuoteDisplay(gameWinQuotes) {
     var winQuote = gameWinQuotes[this.getRandomIndex(gameWinQuotes)];
     return winQuote;
   }
