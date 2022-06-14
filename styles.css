@@ -184,7 +184,6 @@ h2 {
 
 .paper-button {
 
-
 }
 
 .scissors-button {
@@ -221,7 +220,14 @@ h2 {
 
 .game-mode-button:hover,
 .game-mode-button2:hover,
-.game-options-button:hover {
+.game-options-button:hover,
+.rock-button:hover,
+.paper-button:hover,
+.scissors-button:hover,
+.onepunchman-button:hover,
+.goku-button:hover,
+.alien-button:hover,
+.mosquito-button:hover {
   background-color: #381A4C;
   cursor: pointer;
 }
