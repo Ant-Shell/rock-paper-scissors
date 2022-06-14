@@ -30,7 +30,7 @@ h2 {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none!important;
 }
 
 .center {
@@ -66,6 +66,14 @@ h2 {
 .flex-column {
   flex-direction: column;
   align-items: center;
+}
+
+.flex-row {
+  display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: center;
+  flex-wrap: wrap;
 }
 
 .main-box {
@@ -121,6 +129,21 @@ h2 {
   top: 100px;
 }
 
+.resize-rock-img {
+  height: 200px;
+  width: 200px;
+}
+
+.resize-paper-img {
+  height: 200px;;
+  width: 150px;
+}
+
+.resize-scissors-img {
+  height: 200px;
+  width: 150px;
+}
+
 .game-mode-button {
   display: block;
   height: 200px;
@@ -133,6 +156,20 @@ h2 {
   height: 300px;
   width: 300px;
   border: none;
+}
+
+.rock-button {
+
+}
+
+.paper-button {
+
+
+}
+
+.scissors-button {
+
+
 }
 
 .game-options-button {
