@@ -28,9 +28,9 @@
           <!-- <span class="font-style center hidden">Choose your combatant!</span> -->
           <span class="font-style center ">Choose your combatant!</span>
         </h2>
-        <section class="main-box flex-column center" id="gameSelect">
-          <!-- <button class="game-mode-button sidebar-color"> -->
-            <button class="game-mode-button sidebar-color hidden">
+        <section class="main-box" id="gameSelect">
+        <div class="main-box flex-column center hidden" id="">
+            <button class="game-mode-button sidebar-color">
             <h2>
               <span class="font-style">Traditional</span>
             </h2>
@@ -42,8 +42,7 @@
                 <span class="font-style">scissors > paper</span>
               </h3>
           </button>
-          <!-- <button class="game-mode-button2 sidebar-color margin-top"> -->
-            <button class="game-mode-button2 sidebar-color margin-top hidden">
+            <button class="game-mode-button2 sidebar-color margin-top">
             <h2>
               <span class="font-style">Extreme</span>
             </h2>
@@ -63,6 +62,24 @@
                 <span class="font-style">mosquito > onepunchman</span>
               </h3>
           </button>
+        </div>
+        <div class="flex-row">
+          <button class="rock-button">
+            <img class="resize-rock-img" src="./assets/rock.png" alt="Human avatar">
+          </button>
+          <button class="paper-button">
+            <img class="resize-paper-img" src="./assets/paper.png" alt="Human avatar">
+          </button>
+          <button class="scissors-button">
+            <img class="resize-scissors-img" src="./assets/scissors.png" alt="Human avatar">
+          </button>
+          </div>
+          <div class="flex-row">
+            EXTREME BUTTONS HERE!!!
+          </div>
+          <div class="flex-row">
+            WIN SCREEN HERE!!!
+          </div>
         </section>
         <footer class="game-options-box" id="gameOptions">
           <button class="game-options-button margin-left font-style sidebar-color" id="changeGameButton">Change Game?</button>
