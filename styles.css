@@ -129,37 +129,44 @@ h2 {
   top: 100px;
 }
 
-.resize-rock-img {
+.resize-rock-img,
+.rock-button {
   height: 200px;
   width: 200px;
 }
 
-.resize-paper-img {
+.resize-paper-img,
+.paper-button {
   height: 200px;;
   width: 150px;
 }
 
-.resize-scissors-img {
+.resize-scissors-img,
+.scissors-button {
   height: 200px;
   width: 150px;
 }
 
-.resize-onepunchman-img {
+.resize-onepunchman-img,
+.onepunchman-button {
   height: 200px;
   width: 150px;
 }
 
-.resize-goku-img {
+.resize-goku-img,
+.goku-button  {
   height: 200px;
   width: 200px;
 }
 
-.resize-alien-img {
+.resize-alien-img,
+.alien-button {
   height: 200px;
   width: 200px;
 }
 
-.resize-mosquito-img {
+.resize-mosquito-img,
+.mosquito-button {
   height: 150px;
   width: 200px;
 }
@@ -177,40 +184,6 @@ h2 {
   width: 300px;
   border: none;
 }
-
-.rock-button {
-
-}
-
-.paper-button {
-
-}
-
-.scissors-button {
-
-
-}
-
-.onepunchman-button {
-
-
-}
-
-.goku-button {
-
-
-}
-
-.alien-button {
-
-
-}
-
-.mosquito-button {
-
-
-}
-
 
 .game-options-button {
   height: 50px;
