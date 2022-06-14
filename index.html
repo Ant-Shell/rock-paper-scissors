@@ -23,13 +23,11 @@
           <span class="font-style">Rock Paper Scissors</span>
         </h1>
         <h2>
-          <span class="font-style center hidden">Choose your style!</span>
-          <!-- <span class="font-style center">Choose your style!</span> -->
-          <!-- <span class="font-style center hidden">Choose your combatant!</span> -->
-          <span class="font-style center ">Choose your combatant!</span>
+          <span class="font-style center">Choose your style!</span>
+          <span class="font-style center hidden">Choose your combatant!</span>
         </h2>
         <section class="main-box" id="gameSelect">
-        <div class="main-box flex-column center hidden" id="">
+        <div class="main-box flex-column center">
             <button class="game-mode-button sidebar-color">
             <h2>
               <span class="font-style">Traditional</span>
@@ -63,7 +61,7 @@
               </h3>
           </button>
         </div>
-        <div class="flex-row hidden">
+        <div class="flex-row hidden" id="traditionalView">
           <button class="rock-button">
             <img class="resize-rock-img" src="./assets/rock.png" alt="Human avatar">
           </button>
@@ -74,7 +72,7 @@
             <img class="resize-scissors-img" src="./assets/scissors.png" alt="Human avatar">
           </button>
           </div>
-          <div class="flex-row hidden">
+          <div class="flex-row hidden" id="extremeView">
             <button class="rock-button">
               <img class="resize-rock-img" src="./assets/rock.png" alt="rock avatar">
             </button>
@@ -98,7 +96,7 @@
             </button>
             </div>
           </div>
-          <div class="flex-row hidden">
+          <div class="flex-row hidden" id="gameResultView">
             <img class="resize--img" src="./assets/.png" alt="avatar">
             <img class="resize--img" src="./assets/.png" alt="avatar">
           </div>
