@@ -22,6 +22,7 @@ class Game {
 
   determineWinner() {
   var player1Result = this.players[0].takeTurn(this.rules);
+  // var player1Result = humanTakeTurn();
   var player2Result = this.players[1].takeTurn(this.rules);
   var win = this.winQuoteDisplay(gameWinQuotes);
   var lose = this.lossQuoteDisplay(gameLossQuotes);
