@@ -144,6 +144,26 @@ h2 {
   width: 150px;
 }
 
+.resize-onepunchman-img {
+  height: 200px;
+  width: 150px;
+}
+
+.resize-goku-img {
+  height: 200px;
+  width: 200px;
+}
+
+.resize-alien-img {
+  height: 200px;
+  width: 200px;
+}
+
+.resize-mosquito-img {
+  height: 150px;
+  width: 200px;
+}
+
 .game-mode-button {
   display: block;
   height: 200px;
@@ -171,6 +191,27 @@ h2 {
 
 
 }
+
+.onepunchman-button {
+
+
+}
+
+.goku-button {
+
+
+}
+
+.alien-button {
+
+
+}
+
+.mosquito-button {
+
+
+}
+
 
 .game-options-button {
   height: 50px;
