@@ -29,13 +29,17 @@ h2 {
   color: #EFF8F3
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .center {
   display: flex;
   justify-content: center;
 }
 
 .margin-top {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .margin-left {
@@ -134,7 +138,6 @@ h2 {
 .game-options-button {
   height: 50px;
   width: 175px;
-  margin-top: 25px;
   border: none;
 }
 
