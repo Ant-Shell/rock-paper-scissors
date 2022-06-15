@@ -48,6 +48,13 @@ class Game {
   return Math.floor(Math.random() * array.length);
   }
 
+  resetStats() {
+    for (var i = 0 ; i < this.players.length : i++)
+    this.players[i].stats.wins = 0;
+    this.players[i].stats.losses = 0;
+    this.players[i].stats.draws = 0;
+  }
+
   lossQuoteDisplay(gameLossQuotes) {
     var lossQuote = gameLossQuotes[this.getRandomIndex(gameLossQuotes)];
     return lossQuote;
