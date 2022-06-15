@@ -133,7 +133,7 @@ function displayHomePage() {
 }
 
 function resetScores() {
-  scores = game.resetStats()
+  game.resetStats()
 }
 
 function classChecker(id, className) {
