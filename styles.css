@@ -29,13 +29,17 @@ h2 {
   color: #EFF8F3
 }
 
+.hidden {
+  display: none!important;
+}
+
 .center {
   display: flex;
   justify-content: center;
 }
 
 .margin-top {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .margin-left {
@@ -64,6 +68,14 @@ h2 {
   align-items: center;
 }
 
+.flex-row {
+  display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: center;
+  flex-wrap: wrap;
+}
+
 .main-box {
   height: 500px;
 }
@@ -79,25 +91,29 @@ h2 {
   justify-content: space-between;
 }
 
-.player-text {
+.player1-text,
+.player2-text{
   font-size: 40px;
   position: absolute;
   top: 150px;
 }
 
-.player-text2 {
+.player1-text2,
+.player2-text2{
   font-size: 30px;
   position: absolute;
   top: 210px;
 }
 
-.player-text3 {
+.player1-text3,
+.player2-text3 {
   font-size: 30px;
   position: absolute;
   top: 260px;
 }
 
-.player-text4 {
+.player1-text4,
+.player2-text4 {
   font-size: 30px;
   position: absolute;
   top: 310px;
@@ -117,6 +133,48 @@ h2 {
   top: 100px;
 }
 
+.resize-rock-img,
+.rock-button {
+  height: 200px;
+  width: 200px;
+}
+
+.resize-paper-img,
+.paper-button {
+  height: 200px;;
+  width: 150px;
+}
+
+.resize-scissors-img,
+.scissors-button {
+  height: 200px;
+  width: 150px;
+}
+
+.resize-onepunchman-img,
+.onepunchman-button {
+  height: 200px;
+  width: 150px;
+}
+
+.resize-goku-img,
+.goku-button  {
+  height: 200px;
+  width: 200px;
+}
+
+.resize-alien-img,
+.alien-button {
+  height: 200px;
+  width: 200px;
+}
+
+.resize-mosquito-img,
+.mosquito-button {
+  height: 150px;
+  width: 200px;
+}
+
 .game-mode-button {
   display: block;
   height: 200px;
@@ -134,13 +192,26 @@ h2 {
 .game-options-button {
   height: 50px;
   width: 175px;
-  margin-top: 25px;
   border: none;
 }
 
 .game-mode-button:hover,
 .game-mode-button2:hover,
-.game-options-button:hover {
+.game-options-button:hover,
+.rock-button:hover,
+.paper-button:hover,
+.scissors-button:hover,
+.onepunchman-button:hover,
+.goku-button:hover,
+.alien-button:hover,
+.mosquito-button:hover,
+.resize-rock-img,
+.resize-paper-img,
+.resize-scissors-img,
+.resize-onepunchman-img,
+.resize-goku-img,
+.resize-alien-img,
+.resize-mosquito-img {
   background-color: #381A4C;
   cursor: pointer;
 }

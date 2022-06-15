@@ -9,23 +9,25 @@
   </head>
   <section class="container">
   <body class="body-color">
-      <nav class="sidebar-color">
+      <nav class="sidebar-color" id="sidebarLeft">
         <section class="score-box center">
           <img class="resize-human-img" src="./assets/Human1.png" alt="Human avatar"></img>
-          <span class="font-style player-text">Human</span>
-          <span class="font-style player-text2">Wins:</span>
-          <span class="font-style player-text3">Losses:</span>
-          <span class="font-style player-text4">Draws:</span>
+          <span class="font-style player1-text">Human</span>
+          <span class="font-style player1-text2">Wins: </span>
+          <span class="font-style player1-text3">Losses: </span>
+          <span class="font-style player1-text4">Draws: </span>
         </section>
       </nav>
       <main class="width-add height-add">
         <h1 class="center">
           <span class="font-style">Rock Paper Scissors</span>
         </h1>
-        <h2 class="center">
-          <span class="font-style">Choose your style!</span>
+        <h2>
+          <span class="font-style center" id="styleHeadline">Choose your style!</span>
+          <span class="font-style center hidden" id="combatantHeadline">Choose your combatant!</span>
         </h2>
-        <section class="main-box flex-column center">
+        <section class="main-box">
+        <div class="main-box flex-column center" id="gameSelect">
           <button class="game-mode-button sidebar-color">
             <h2>
               <span class="font-style">Traditional</span>
@@ -58,19 +60,42 @@
                 <span class="font-style">mosquito > onepunchman</span>
               </h3>
           </button>
+        </div>
+        <div class="flex-row hidden" id="traditionalView">
+            <img class="resize-rock-img" src="./assets/rock.png" alt="Human avatar">
+            <img class="resize-paper-img" src="./assets/paper.png" alt="Human avatar">
+            <img class="resize-scissors-img" src="./assets/scissors.png" alt="Human avatar">
+          </div>
+          <div class="flex-row hidden" id="extremeView">
+              <img class="resize-rock-img" src="./assets/rock.png" alt="rock avatar">
+              <img class="resize-paper-img" src="./assets/paper.png" alt="paper avatar">
+              <img class="resize-scissors-img" src="./assets/scissors.png" alt="scissors avatar">
+              <img class="resize-onepunchman-img" src="./assets/onepunchman.png" alt="onepunchman avatar">
+              <img class="resize-goku-img" src="./assets/goku.png" alt="goku avatar">
+              <img class="resize-alien-img" src="./assets/alien.png" alt="alien avatar">
+              <img class="resize-mosquito-img" src="./assets/mosquito.png" alt="mosquito avatar">
+            </div>
+          </div>
+          <div class="flex-row hidden" id="gameResultView">
+            <!-- <img class="resize-img" src="./assets/.png" alt="avatar">
+            <img class="resize-img" src="./assets/.png" alt="avatar"> -->
+          </div>
+          <div class="center font-style hidden" id="gameResultQuote">
+            <h3 id="customQuote">Custom Quote Here</h3>
+          </div>
         </section>
-        <footer class="game-options-box">
-          <button class="game-options-button margin-left font-style sidebar-color">Change Game?</button>
-          <button class="game-options-button margin-right font-style sidebar-color">Reset Settings?</button>
+        <footer class="game-options-box" id="gameOptions">
+          <button class="game-options-button margin-left font-style sidebar-color change-game-button">Change Game?</button>
+          <button class="game-options-button margin-right font-style sidebar-color reset-scores-button">Reset Scores?</button>
         </footer>
       </main>
-      <aside class="sidebar-color">
+      <aside class="sidebar-color" id="sidebarRight">
         <section class="score-box center">
           <img class="resize-robot-img" src="./assets/Robot1.png" alt="Human avatar"></img>
-          <span class="font-style player-text">Robot</span>
-          <span class="font-style player-text2">Wins:</span>
-          <span class="font-style player-text3">Losses:</span>
-          <span class="font-style player-text4">Draws:</span>
+          <span class="font-style player2-text">Robot</span>
+          <span class="font-style player2-text2">Wins: </span>
+          <span class="font-style player2-text3">Losses: </span>
+          <span class="font-style player2-text4">Draws: </span>
         </section>
       </aside>
     </section>
