@@ -32,15 +32,22 @@ class Game {
   if (player1Result === player2Result) {
     this.players[0].stats.draws ++;
     this.players[1].stats.draws ++ ;
-      return ['draw', drawQuote, player1Result, player2Result];
+    customQuote.innerText = drawQuote
+      drawDisplayPlayer1.innerText = `Draws: ${this.players[0].stats.draws}`
+      drawDisplayPlayer2.innerText = `Draws: ${this.players[1].stats.draws}`
     } else if (this.rules[player2Result].includes(player1Result)) {
       this.players[0].stats.losses++
       this.players[1].stats.wins++
-      return ['lose', loseQuote, player1Result, player2Result];
+      customQuote.innerText = loseQuote
+      lossDisplayPlayer1.innerText = `Losses: ${this.players[0].stats.losses}`
+      winDisplayPlayer2.innerText = `Wins: ${this.players[1].stats.wins}`
+
     } else {
       this.players[0].stats.wins++
       this.players[1].stats.losses++
-      return ['win', winQuote, player1Result, player2Result];
+      customQuote.innerText = winQuote
+      winDisplayPlayer1.innerText = `Wins: ${this.players[0].stats.wins}`
+      lossDisplayPlayer2.innerText = `Losses: ${this.players[1].stats.losses}`
     }
   }
 
