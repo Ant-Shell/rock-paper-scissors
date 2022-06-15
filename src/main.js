@@ -27,8 +27,8 @@ var lossDisplayPlayer1 = document.querySelector('.player1-text3')
 var lossDisplayPlayer2 = document.querySelector('.player2-text3')
 var drawDisplayPlayer1 = document.querySelector('.player1-text4')
 var drawDisplayPlayer2 = document.querySelector('.player2-text4')
-var player1Image = document.getElementById('playerImage1')
-var player2Image = document.getElementById('playerImage2')
+var player1Image = document.querySelector('.playerImage1')
+var player2Image = document.querySelector('.playerImage2')
 
 var humanPlayer;
 var robotPlayer;
