@@ -33,7 +33,6 @@ Who will win? The answer may surprise you!
 - Additional win quotes
 
 ## Known Issues
-- Bug: Images do not currently display on the win screen
 - Bug: Reset Scores button currently inoperable
 
 ## Deployed Page
