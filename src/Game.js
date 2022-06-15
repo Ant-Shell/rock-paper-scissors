@@ -9,8 +9,8 @@ class Game {
   select() {
   if (this.type === 'extreme') {
     this.extreme = true;
+    }
   }
-}
 
   setup() {
   if (this.extreme === true) {
@@ -92,5 +92,5 @@ class Game {
   drawQuoteDisplay(gameDrawQuotes) {
   var drawQuote = gameDrawQuotes[this.getRandomIndex(gameDrawQuotes)];
     return drawQuote;
+    }
   }
-}
