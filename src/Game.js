@@ -49,10 +49,14 @@ class Game {
   }
 
   resetStats() {
-    for (var i = 0 ; i < this.players.length : i++)
-    this.players[i].stats.wins = 0;
-    this.players[i].stats.losses = 0;
-    this.players[i].stats.draws = 0;
+    for (var i = 0 ; i < this.players.length ; i++)
+    this.players[i].stats = {
+      wins: 0,
+      losses: 0,
+      draws: 0,
+    }
+    // return [this.players[0].stats, this.players[1].stats]
+    return this.players
   }
 
   lossQuoteDisplay(gameLossQuotes) {
