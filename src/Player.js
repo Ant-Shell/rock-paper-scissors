@@ -15,7 +15,6 @@ class Player {
 
 
   humanTakeTurn(selection) {
- //Want this to be based on user input
     var player1Result = selection;
     if (player1Result === "rock") {
       return "rock";

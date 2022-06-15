@@ -1,7 +1,3 @@
-/* * {
-  border: 1px solid red;
-} */
-
 html {
   background-color: #e9bf5c;
 }
@@ -20,6 +16,11 @@ h2 {
 
 .sidebar-color {
   background-color: #9A67BD;
+  z-index: 1;
+}
+
+.game-options-color {
+  background-color: #8FA79B;
   z-index: 1;
 }
 
@@ -133,45 +134,43 @@ h2 {
   top: 100px;
 }
 
-.resize-rock-img,
-.rock-button {
+.resize-rock-img {
   height: 200px;
   width: 200px;
 }
 
-.resize-paper-img,
-.paper-button {
+.resize-paper-img {
   height: 200px;;
   width: 150px;
 }
 
-.resize-scissors-img,
-.scissors-button {
+.resize-scissors-img {
   height: 200px;
   width: 150px;
 }
 
-.resize-onepunchman-img,
-.onepunchman-button {
+.resize-onepunchman-img {
   height: 200px;
   width: 150px;
 }
 
-.resize-goku-img,
-.goku-button  {
+.resize-goku-img  {
   height: 200px;
   width: 200px;
 }
 
-.resize-alien-img,
-.alien-button {
+.resize-alien-img {
   height: 200px;
   width: 200px;
 }
 
-.resize-mosquito-img,
-.mosquito-button {
+.resize-mosquito-img {
   height: 150px;
+  width: 200px;
+}
+
+.resize-img {
+  height: 200px;
   width: 200px;
 }
 
@@ -192,6 +191,7 @@ h2 {
 .game-options-button {
   height: 50px;
   width: 175px;
+  background-color: #C1D2C8
   border: none;
 }
 
