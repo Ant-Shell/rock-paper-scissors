@@ -23,8 +23,8 @@
           <span class="font-style">Rock Paper Scissors</span>
         </h1>
         <h2>
-          <span class="font-style center">Choose your style!</span>
-          <span class="font-style center hidden">Choose your combatant!</span>
+          <span class="font-style center" id="styleHeadline">Choose your style!</span>
+          <span class="font-style center hidden" id="combatantHeadline">Choose your combatant!</span>
         </h2>
         <section class="main-box" id="gameSelect">
         <div class="main-box flex-column center">
@@ -100,13 +100,13 @@
             <img class="resize--img" src="./assets/.png" alt="avatar">
             <img class="resize--img" src="./assets/.png" alt="avatar">
           </div>
-          <div class="center font-style hidden">
+          <div class="center font-style hidden" id="gameResultQuote">
             <h3>Custom Quote Here</h3>
           </div>
         </section>
         <footer class="game-options-box" id="gameOptions">
-          <button class="game-options-button margin-left font-style sidebar-color" id="changeGameButton">Change Game?</button>
-          <button class="game-options-button margin-right font-style sidebar-color" id="resetScoresButton">Reset Scores?</button>
+          <button class="game-options-button margin-left font-style sidebar-color change-game-button">Change Game?</button>
+          <button class="game-options-button margin-right font-style sidebar-color reset-scores-button">Reset Scores?</button>
         </footer>
       </main>
       <aside class="sidebar-color" id="sidebarRight">
