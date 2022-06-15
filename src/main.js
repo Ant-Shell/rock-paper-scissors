@@ -1,80 +1,117 @@
 // QuerySelectors
 var sidebarLeft = document.getElementById('sideBarLeft');
 var gameSelect = document.getElementById('gameSelect');
-
 var gameoptions = document.getElementById('gameOptions');
 var sidebarRight = document.getElementById('sidebarRight');
-var changeGameButton = document.getElementById('changeGameButton');
-var resetScoresButton = document.getElementById('resetScoresButton');
+var styleHeadline = document.getElementById('styleHeadline');
+var traditionalView = document.getElementById('traditionalView');
+var extremeView = document.getElementById('extremeView');
+var gameResultView = document.getElementById('gameResultView');
+var gameResultQuote = document.getElementById('gameResultQuote');
+var styleHeadline = document.getElementById('styleHeadline');
+var combatantHeadline = document.getElementById('combatantHeadline');
 var traditionalModeButton = document.querySelector('.game-mode-button');
 var extremeModeButton = document.querySelector('.game-mode-button2');
-// var presentGame = newGame();
+var changeGameButton = document.querySelector('.change-game-button');
+var resetScoresButton = document.querySelector('.reset-scores-button');
+var rockButton = document.querySelector('.rock-button');
+var paperButton = document.querySelector('.paper-button');
+var scissorsButton = document.querySelector('.scissors-button');
+var onepunchmanButton = document.querySelector('.onepunchman-button');
+var gokuButton = document.querySelector('.goku-button');
+var alienButton = document.querySelector('.alien-button');
+var moquitoButton = document.querySelector('.mosquito-button');
+
+// Global variables
+var humanPlayer;
+var robotPlayer;
+var game;
+var humanChoice;
+var timeout = setTimeout(returnToTraditionalView, 5000);
+
+
 // Event Listeners
-gameSelect.addEventListener('click', function(event)) {
-  var type = gameSelect(event)
-  currentGame.select()
-  currentGame.setup()
+gameSelect.addEventListener('click', function()) {
+  if (classChecker(gameSelect, extremeModeButton) === 'extreme') {
+    newGame('traditional');
+  } else {
+    newGame('traditional');
+  }
 })
 
+gameoptions.addEventListener('click', function()) {
+ if classChecker(gameOptions, changeGameButton) === 'change-game-button') {
+   displayHomePage();
+ } else {
+   resetScores();
+ })
 
-changeGameButton.addEventListener('click', displayHomePage)
 
+traditionalView.addEventListener('click', function()) {
+  if classChecker(traditionalView, rockButton) === 'rock-button') {
+  humanChoice = humanPlayer.humanTakeTurn('rock');
+  game.determineWinner(humanChoice);
+  displayOutcome();
+  game.displayUpdatedScores();
+  timeout;
+} else if (classChecker(traditionalView, paperButton) === 'paper-button') {
+  humanChoice = humanPlayer.humanTakeTurn('paper');
+  game.determineWinner(humanChoice);
+  displayOutcome();
+  game.displayUpdatedScores();
+  timeout;
+} else if (classChecker(traditionalView, scissorsButton) === 'scissors-button') {
+  humanChoice = humanPlayer.humanTakeTurn('scissors');
+  game.determineWinner(humanChoice);
+  displayOutcome();
+  game.displayUpdatedScores();
+  timeout;
+  }
+})
+
+  // game.determineWinner(humanChoice)
+  //game.displayUpdatedScores()
+  // displayOutcome()
+  // timeout = setTimeout(returnToTraditionalView, 5000)
+
+
+extremeView.addEventListener('click', function()) {
+  if classChecker(traditionalView, rockButton) === 'rock-button') {
+  humanChoice = humanPlayer.humanTakeTurn('rock');
+  game.determineWinner(humanChoice);
+  displayOutcome();
+  game.displayUpdatedScores();
+  timeout;
+} else if (classChecker(traditionalView, paperButton) === 'paper-button') {
+  humanChoice = humanPlayer.humanTakeTurn('paper');
+  game.determineWinner(humanChoice);
+  displayOutcome();
+  game.displayUpdatedScores();
+  timeout;
+} else if (classChecker(traditionalView, scissorsButton) === 'scissors-button') {
+  humanChoice = humanPlayer.humanTakeTurn('scissors');
+  game.determineWinner(humanChoice);
+  displayOutcome();
+  game.displayUpdatedScores();
+  timeout;
+  }
+})
 
 // Functions
+function show(element) {
+element.classList.remove("hidden");
+};
+
+function hide(element) {
+  element.classList.add("hidden");
+};
+
 function newGame(type) {
-var humanPlayer = new Player('Human');
-var robotPlayer = new Player('Robot');
-var newGame = new Game(humanPlayer, robotPlayer, type)
-return newGame;
-}
-
-function avatarDisplayHuman() {
-  // Want to display all avatars that are in player1Avatars
-  // Unhide a box that shows the images (need sizing)
-  // Upon click of image, kick off avatarSelect function() ?
-}
-
-function avatarDisplayRobot() {
-  // Want to display all avatars that are in and player2Avatars
-  // Unhide a box that shows the images (need sizing)
-  // Upon click of image, return image and kick off avatarSelect function() ?
-  // Place this function before avatarSelect() in event handler?
-}
-
-function avatarSelect(imageFile) {
-// Want to allow for user to choose avatar for humanPlayer and robotPlayer
-// This depends on which button is pressed
-// Also depends on if image file contains 'Human' or 'Robot'?
-// Can the value of an argument be assigned to a variable?
-
-}
-
-function displayUpdatedAvatar() {
-// Want to display the new avatar that was selected by the user
-// Need to inject new image into the html or add to game.players[0].avatar / game.players[0].avatar ?
-// If the later, can I just inject game.players[0].avatar / game.players[0].avatar
-// via interpolation (innerText / innerHTML)?
-// https://frontend.turing.edu/lessons/module-1/js-intro-to-the-dom.html
-}
-
-function gameSelect(event) {
-// Want user to be able to select a game type upon button click
-// If one button is selected, return 'traditional'
-// If another is clicked, return 'extreme'
-  if (event.target.className === traditionalModeButton) {
-    return 'traditional';
-  } else if (event.target.className === extremeModeButton)  {
-    return 'extreme';
-  }
-}
-
-function gameSetup() {
-// Want game to be set up based on the result of gameSelect()
-}
-
-function turnsTaken() {
-// Want both humanPlayer and robotPlayer to take their turns at the same time
-
+humanPlayer = new Player('Human');
+robotPlayer = new Player('Robot');
+game = new Game(humanPlayer, robotPlayer, type);
+game.select();
+game.setup();
 }
 
 function displayOutcome() {
@@ -99,4 +136,17 @@ function resetScores() {
 // This should only initialize game.players[0].stats[stat]
 // and game.players[1].stats[stat] to zero
 // Should not reset game
+}
+
+function classChecker(id, className) {
+var classname = id.classList.contains(className);
+return classname;
+}
+
+function returnToTraditionalView() {
+
+}
+
+function returnToExtremeView() {
+
 }

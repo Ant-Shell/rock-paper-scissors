@@ -20,26 +20,27 @@ class Game {
     }
   }
 
-  determineWinner() {
-  var player1Result = this.players[0].takeTurn(this.rules);
+  determineWinner(humanChoice) {
+  // var player1Result = this.players[0].takeTurn(this.rules);
   // var player1Result = humanTakeTurn();
+  var player1Result = humanChoice;
   var player2Result = this.players[1].takeTurn(this.rules);
-  var win = this.winQuoteDisplay(gameWinQuotes);
-  var lose = this.lossQuoteDisplay(gameLossQuotes);
-  var draw = this.drawQuoteDisplay(gameDrawQuotes);
+  var winQuote = this.winQuoteDisplay(gameWinQuotes);
+  var loseQuote = this.lossQuoteDisplay(gameLossQuotes);
+  var drawQuote = this.drawQuoteDisplay(gameDrawQuotes);
 
   if (player1Result === player2Result) {
     this.players[0].stats.draws ++;
     this.players[1].stats.draws ++ ;
-      return [draw, player1Result, player2Result];
+      return ['draw', drawQuote, player1Result, player2Result];
     } else if (this.rules[player2Result].includes(player1Result)) {
       this.players[0].stats.losses++
       this.players[1].stats.wins++
-      return [lose, player1Result, player2Result];
+      return ['lose', loseQuote, player1Result, player2Result];
     } else {
       this.players[0].stats.wins++
       this.players[1].stats.losses++
-      return [win, player1Result, player2Result];
+      return ['win', winQuote, player1Result, player2Result];
     }
   }
 
