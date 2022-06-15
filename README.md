@@ -22,7 +22,7 @@ Who will win? The answer may surprise you!
 ## Features
 - Fun and engaging game modes
 - After choosing the game mode, the player can select their "combatant"
-- The a randomized will be displayed, depending on the outcome
+- A randomized quote will be displayed, depending on the outcome
 - Updated scores are displayed after every round
 - The player has the option of changing the game at any time
 
