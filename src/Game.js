@@ -1,22 +1,22 @@
 class Game {
   constructor(player1, player2, type) {
-    this.players = new Array(player1, player2);
+    this.players = [player1, player2];
     this.type = type;
     this.extreme = false;
     this.rules = null;
   }
 
   select() {
-    if (this.type === 'extreme') {
-      this.extreme = true;
-    }
+  if (this.type === 'extreme') {
+    this.extreme = true;
   }
+}
 
   setup() {
-    if (this.extreme === true) {
-      this.rules = configExtreme;
-    } else {
-      this.rules = configTraditional;
+  if (this.extreme === true) {
+    this.rules = configExtreme;
+  } else {
+    this.rules = configTraditional;
     }
   }
 
@@ -31,26 +31,26 @@ class Game {
     this.players[0].stats.draws ++;
     this.players[1].stats.draws ++ ;
     customQuote.innerText = "Draw: " + drawQuote
-      drawDisplayPlayer1.innerText = `Draws: ${this.players[0].stats.draws}`
-      drawDisplayPlayer2.innerText = `Draws: ${this.players[1].stats.draws}`
-      player1Image.innerText = `src="./assets/${player1Result}.png" alt="${player1Result} avatar"`
-      player2Image.innerText = `src="./assets/${player2Result}.png" alt="${player2Result} avatar"`
-    } else if (this.rules[player2Result].includes(player1Result)) {
-      this.players[0].stats.losses++
-      this.players[1].stats.wins++
-      customQuote.innerText = "Computer: " + loseQuote
-      lossDisplayPlayer1.innerText = `Losses: ${this.players[0].stats.losses}`
-      winDisplayPlayer2.innerText = `Wins: ${this.players[1].stats.wins}`
-      player1Image.innerText = `src="./assets/${player1Result}.png" alt="${player1Result} avatar"`
-      player2Image.innerText = `src="./assets/${player2Result}.png" alt="${player2Result} avatar"`
-    } else {
-      this.players[0].stats.wins++
-      this.players[1].stats.losses++
-      customQuote.innerText = "Human: " + winQuote
-      winDisplayPlayer1.innerText = `Wins: ${this.players[0].stats.wins}`
-      lossDisplayPlayer2.innerText = `Losses: ${this.players[1].stats.losses}`
-      player1Image.innerText = `src="./assets/${player1Result}.png" alt="${player1Result} avatar"`
-      player2Image.innerText = `src="./assets/${player2Result}.png" alt="${player2Result} avatar"`
+    drawDisplayPlayer1.innerText = `Draws: ${this.players[0].stats.draws}`
+    drawDisplayPlayer2.innerText = `Draws: ${this.players[1].stats.draws}`
+    player1Image.innerText = `src="./assets/${player1Result}.png" alt="${player1Result} avatar"`
+    player2Image.innerText = `src="./assets/${player2Result}.png" alt="${player2Result} avatar"`
+  } else if (this.rules[player2Result].includes(player1Result)) {
+    this.players[0].stats.losses++
+    this.players[1].stats.wins++
+    customQuote.innerText = "Computer: " + loseQuote
+    lossDisplayPlayer1.innerText = `Losses: ${this.players[0].stats.losses}`
+    winDisplayPlayer2.innerText = `Wins: ${this.players[1].stats.wins}`
+    player1Image.innerText = `src="./assets/${player1Result}.png" alt="${player1Result} avatar"`
+    player2Image.innerText = `src="./assets/${player2Result}.png" alt="${player2Result} avatar"`
+  } else {
+    this.players[0].stats.wins++
+    this.players[1].stats.losses++
+    customQuote.innerText = "Human: " + winQuote
+    winDisplayPlayer1.innerText = `Wins: ${this.players[0].stats.wins}`
+    lossDisplayPlayer2.innerText = `Losses: ${this.players[1].stats.losses}`
+    player1Image.innerText = `src="./assets/${player1Result}.png" alt="${player1Result} avatar"`
+    player2Image.innerText = `src="./assets/${player2Result}.png" alt="${player2Result} avatar"`
     }
   }
 
@@ -59,7 +59,7 @@ class Game {
   }
 
   resetStats() {
-    for (var i = 0 ; i < this.players.length ; i++)
+  for (var i = 0 ; i < this.players.length ; i++)
     this.players[i].stats = {
       wins: 0,
       losses: 0,
@@ -69,17 +69,17 @@ class Game {
   }
 
   lossQuoteDisplay(gameLossQuotes) {
-    var lossQuote = gameLossQuotes[this.getRandomIndex(gameLossQuotes)];
+  var lossQuote = gameLossQuotes[this.getRandomIndex(gameLossQuotes)];
     return lossQuote;
   }
 
   winQuoteDisplay(gameWinQuotes) {
-    var winQuote = gameWinQuotes[this.getRandomIndex(gameWinQuotes)];
+  var winQuote = gameWinQuotes[this.getRandomIndex(gameWinQuotes)];
     return winQuote;
   }
 
   drawQuoteDisplay(gameDrawQuotes) {
-    var drawQuote = gameDrawQuotes[this.getRandomIndex(gameDrawQuotes)];
+  var drawQuote = gameDrawQuotes[this.getRandomIndex(gameDrawQuotes)];
     return drawQuote;
   }
 }
