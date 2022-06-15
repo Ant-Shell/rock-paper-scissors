@@ -32,8 +32,5 @@ Who will win? The answer may surprise you!
 - Avatar selection
 - Additional win quotes
 
-## Known Issues
-- Bug: Reset Scores button currently inoperable
-
 ## Deployed Page
 https://ant-shell.github.io/rock-paper-scissors/
