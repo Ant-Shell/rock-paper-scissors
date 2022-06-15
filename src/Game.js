@@ -30,7 +30,7 @@ class Game {
   if (player1Result === player2Result) {
     this.players[0].stats.draws ++;
     this.players[1].stats.draws ++ ;
-    customQuote.innerText = `Human and Computer picked ${player1Result}: ` + drawQuote
+    customQuote.innerText = `You and Computer picked ${player1Result}: ` + drawQuote
     drawDisplayPlayer1.innerText = `Draws: ${this.players[0].stats.draws}`
     drawDisplayPlayer2.innerText = `Draws: ${this.players[1].stats.draws}`
     gameResultView.innerHTML = `
@@ -71,7 +71,12 @@ class Game {
       losses: 0,
       draws: 0,
     }
-    return this.players
+    winDisplayPlayer1.innerText = `Wins: ${this.players[0].stats.wins}`
+    winDisplayPlayer2.innerText = `Wins: ${this.players[1].stats.wins}`
+    lossDisplayPlayer1.innerText = `Losses: ${this.players[0].stats.losses}`
+    lossDisplayPlayer2.innerText = `Losses: ${this.players[1].stats.losses}`
+    drawDisplayPlayer1.innerText = `Draws: ${this.players[0].stats.draws}`
+    drawDisplayPlayer2.innerText = `Draws: ${this.players[1].stats.draws}`
   }
 
   lossQuoteDisplay(gameLossQuotes) {
