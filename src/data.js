@@ -1,4 +1,3 @@
-// Assets
 var player1Avatars = [
   './assets/Human1.png',
   './assets/Human2.png',
@@ -10,7 +9,6 @@ var player1Avatars = [
   './assets/Human8.png',
 ];
 
-// Assets
 var player2Avatars = [
   './assets/Robot1.png',
   './assets/Robot2.png',
@@ -26,24 +24,17 @@ var rpsAvatars = [
   './assets/scissors.png'
 ];
 
-var opmAvatars = ['./assets/Saitama.png',];
+var opmAvatars = ['./assets/onepunchman.png',];
+var gokuAvatars = ['./assets/goku.png',];
+var alienAvatars = ['./assets/alien.png',];
+var mosquitoAvatars = ['./assets/mosquito.png',];
 
-var gokuAvatars = ['./assets/Goku.png',];
-
-var alienAvatars = ['./assets/Alien.png',];
-
-var mosquitoAvatars = ['./assets/Mosquito.png',];
-
-// Traditional game config object
 var configTraditional = {
   "rock": ["scissors"],
   "scissors": ["paper"],
   "paper": ["rock"],
 };
 
-// Extreme game config array
-// Merge with configTraditional object(?)
-// https://webinuse.com/how-to-merge-objects-in-javascript/
 var configExtreme = {
   "rock": ["scissors", "goku", "mosquito"],
   "scissors": ["paper", "mosquito"],
@@ -54,8 +45,6 @@ var configExtreme = {
   "mosquito": ["onepunchman"],
 };
 
-
-// Strings
 var gameWinQuotes = [
   "You Win!",
   "Nice Fight!",
@@ -70,7 +59,6 @@ var gameWinQuotes = [
   "It's Morbin Time!",
 ];
 
-// Strings
 var gameLossQuotes = [
   "Outsmarted.",
   "Better luck next time.",
@@ -85,7 +73,6 @@ var gameLossQuotes = [
   "You got Morbed On",
 ];
 
-// Strings
 var gameDrawQuotes = [
   "Draw Game!",
   "It's a Draw!",
@@ -103,7 +90,6 @@ var opmWinQuotes = [
 var gokuWinQuotes = [
   "KamehameHAAAAAAAA!"
 ];
-
 
 var alienWinQuotes = [
   "I am the mighty Frieza!"

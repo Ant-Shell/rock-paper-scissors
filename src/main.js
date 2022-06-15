@@ -1,4 +1,3 @@
-// QuerySelectors
 var sidebarLeft = document.getElementById('sideBarLeft');
 var gameSelect = document.getElementById('gameSelect');
 var gameOptions = document.getElementById('gameOptions');
@@ -31,62 +30,54 @@ var drawDisplayPlayer2 = document.querySelector('.player2-text4')
 var player1Image = document.getElementById('playerImage1')
 var player2Image = document.getElementById('playerImage2')
 
-// Global variables
 var humanPlayer;
 var robotPlayer;
 var game;
 var humanChoice;
 var scores;
 
-
-// Event Listeners
 traditionalModeButton.addEventListener('click', createNewGameTraditional)
-
 extremeModeButton.addEventListener('click', createNewGameExtreme)
-
 changeGameButton.addEventListener('click', displayHomePage)
-
 resetScoresButton.addEventListener('click', resetScores)
-
-
 traditionalView.addEventListener('click', function(event) {
   if (event.target.classList.contains('resize-rock-img') === true) {
-  humanChoice = humanPlayer.humanTakeTurn('rock');
-  game.determineWinner(humanChoice);
-  displayOutcome();
-  var timeout = setTimeout(displayTraditionalView, 5000);
-} else if (event.target.classList.contains('resize-paper-img') === true) {
-  humanChoice = humanPlayer.humanTakeTurn('paper');
-  game.determineWinner(humanChoice);
-  displayOutcome();
-  var timeout = setTimeout(displayTraditionalView, 5000);
-} else if (event.target.classList.contains('resize-scissors-img') === true) {
-  humanChoice = humanPlayer.humanTakeTurn('scissors');
-  game.determineWinner(humanChoice);
-  displayOutcome();
-  var timeout = setTimeout(displayTraditionalView, 5000);
+    humanChoice = humanPlayer.humanTakeTurn('rock');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    var timeout = setTimeout(displayTraditionalView, 5000);
+  } else if (event.target.classList.contains('resize-paper-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('paper');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    var timeout = setTimeout(displayTraditionalView, 5000);
+  } else if (event.target.classList.contains('resize-scissors-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('scissors');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    var timeout = setTimeout(displayTraditionalView, 5000);
   }
 })
 
 extremeView.addEventListener('click', function(event) {
   if (event.target.classList.contains('resize-rock-img') === true) {
-  humanChoice = humanPlayer.humanTakeTurn('rock');
-  game.determineWinner(humanChoice);
-  displayOutcome();
-  var timeout = setTimeout(displayExtremeView, 5000);
-} else if (event.target.classList.contains('resize-paper-img') === true) {
-  humanChoice = humanPlayer.humanTakeTurn('paper');
-  game.determineWinner(humanChoice);
-  displayOutcome();
-  var timeout = setTimeout(displayExtremeView, 5000);
-} else if (event.target.classList.contains('resize-scissors-img') === true) {
-  humanChoice = humanPlayer.humanTakeTurn('scissors');
-  game.determineWinner(humanChoice);
-  displayOutcome();
-  var timeout = setTimeout(displayExtremeView, 5000);
+    humanChoice = humanPlayer.humanTakeTurn('rock');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    var timeout = setTimeout(displayExtremeView, 5000);
+  } else if (event.target.classList.contains('resize-paper-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('paper');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    var timeout = setTimeout(displayExtremeView, 5000);
+  } else if (event.target.classList.contains('resize-scissors-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('scissors');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    var timeout = setTimeout(displayExtremeView, 5000);
   } else if (event.target.classList.contains('resize-onepunchman-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('onepunchman');
-    game.determineWinner(humanChoice);
+  game.determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 5000);
   } else if (event.target.classList.contains('resize-goku-img') === true) {
@@ -107,9 +98,8 @@ extremeView.addEventListener('click', function(event) {
   }
 })
 
-// Functions
 function show(element) {
-element.classList.remove("hidden");
+  element.classList.remove("hidden");
 };
 
 function hide(element) {
@@ -117,11 +107,11 @@ function hide(element) {
 };
 
 function newGame(type) {
-humanPlayer = new Player('Human');
-robotPlayer = new Player('Robot');
-game = new Game(humanPlayer, robotPlayer, type);
-game.select();
-game.setup();
+  humanPlayer = new Player('Human');
+  robotPlayer = new Player('Robot');
+  game = new Game(humanPlayer, robotPlayer, type);
+  game.select();
+  game.setup();
 }
 
 function displayOutcome() {
@@ -143,12 +133,12 @@ function displayHomePage() {
 }
 
 function resetScores() {
-scores = game.resetStats()
+  scores = game.resetStats()
 }
 
 function classChecker(id, className) {
-var classname = id.classList.contains(className);
-return classname;
+  var classname = id.classList.contains(className);
+  return classname;
 }
 
 function displayTraditionalView() {
@@ -172,13 +162,11 @@ function displayExtremeView() {
 }
 
 function createNewGameExtreme() {
-    newGame('extreme');
-    displayExtremeView();
-  }
-
+  newGame('extreme');
+  displayExtremeView();
+}
 
 function createNewGameTraditional() {
-    newGame('traditional');
-    displayTraditionalView();
-
+  newGame('traditional');
+  displayTraditionalView();
 }
