@@ -127,6 +127,11 @@ function displayUpdatedScores() {
 }
 
 function displayHomePage() {
+  show(gameSelect)
+  hide(combatantHeadline);
+  hide(traditionalView);
+  hide(extremeView);
+  hide(gameResultView);
 // Want the user to be able to change the game type after button click
 // Easy way to do this seems to just go back to the  "home screen"
 }
@@ -136,6 +141,7 @@ function resetScores() {
 // This should only initialize game.players[0].stats[stat]
 // and game.players[1].stats[stat] to zero
 // Should not reset game
+game.resetStats()
 }
 
 function classChecker(id, className) {
