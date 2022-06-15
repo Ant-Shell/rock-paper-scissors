@@ -60,16 +60,16 @@ var gameWinQuotes = [
 ];
 
 var gameLossQuotes = [
-  "Outsmarted.",
+  "You've been Outsmarted.",
   "Better luck next time.",
-  "Outplayed.",
+  "You've been Outplayed.",
   "Skynet Wins.",
   "Fatality.",
   "You Lose.",
   "Oof.",
   "Rekt.",
   "Doh!",
-  "Not This Time.",
+  "Sorry, Not This Time.",
   "You got Morbed On",
 ];
 
@@ -78,9 +78,9 @@ var gameDrawQuotes = [
   "It's a Draw!",
   "Great Minds Think Alike",
   "What are the Odds?",
-  "You?? Me???",
+  "Whoa.",
   "It's like looking in a Mirror ...",
-  "You again???"
+  "Again???"
 ];
 
 var opmWinQuotes = [
