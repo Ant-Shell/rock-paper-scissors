@@ -10,6 +10,7 @@ var gameResultView = document.getElementById('gameResultView');
 var gameResultQuote = document.getElementById('gameResultQuote');
 var styleHeadline = document.getElementById('styleHeadline');
 var combatantHeadline = document.getElementById('combatantHeadline');
+var customQuote = document.getElementById('customQuote');
 var traditionalModeButton = document.querySelector('.game-mode-button');
 var extremeModeButton = document.querySelector('.game-mode-button2');
 var changeGameButton = document.querySelector('.change-game-button');
@@ -21,7 +22,12 @@ var onepunchmanButton = document.querySelector('.onepunchman-button');
 var gokuButton = document.querySelector('.goku-button');
 var alienButton = document.querySelector('.alien-button');
 var moquitoButton = document.querySelector('.mosquito-button');
-
+var winDisplayPlayer1 = document.querySelector('.player1-text2')
+var winDisplayPlayer2 = document.querySelector('.player2-text2')
+var lossDisplayPlayer1 = document.querySelector('.player1-text3')
+var lossDisplayPlayer2 = document.querySelector('.player2-text3')
+var drawDisplayPlayer1 = document.querySelector('.player1-text4')
+var drawDisplayPlayer2 = document.querySelector('.player2-text4')
 
 // Global variables
 var humanPlayer;
@@ -32,73 +38,81 @@ var scores;
 
 
 // Event Listeners
-gameSelect.addEventListener('click', function(event) {
-  if (classChecker(gameSelect, extremeModeButton) === 'extreme') {
-    newGame('extreme');
-    displayExtremeView();
-  } else if (classChecker(gameSelect, traditionalModeButton) === 'traditional') {
-    newGame('traditional');
-    displayTraditionalView();
-  }
-})
+// gameSelect.addEventListener('click', function(event) {
+traditionalModeButton.addEventListener('click', createNewGameTraditional)
 
-gameOptions.addEventListener('click', function(event) {
- if (classChecker(gameOptions, changeGameButton) === 'change-game-button') {
-   displayHomePage();
- } else if (classChecker(gameOptions, resetScoresButton) === 'reset-scores-button') {
-   resetScores();
-   displayUpdatedScores();
- }
-})
+extremeModeButton.addEventListener('click', createNewGameExtreme)
+
+changeGameButton.addEventListener('click', displayHomePage)
+
+resetScoresButton.addEventListener('click', resetScores)
 
 
 traditionalView.addEventListener('click', function(event) {
-  if (classChecker(traditionalView, rockButton) === 'rock-button') {
+  if (event.target.classList.contains('resize-rock-img') === true) {
   humanChoice = humanPlayer.humanTakeTurn('rock');
   game.determineWinner(humanChoice);
   displayOutcome();
-  game.displayUpdatedScores();
-  var timeout = setTimeout(returnToTraditionalView, 5000);
-} else if (classChecker(traditionalView, paperButton) === 'paper-button') {
+  displayUpdatedScores();
+  var timeout = setTimeout(displayTraditionalView, 5000);
+} else if (event.target.classList.contains('resize-paper-img') === true) {
   humanChoice = humanPlayer.humanTakeTurn('paper');
   game.determineWinner(humanChoice);
   displayOutcome();
-  game.displayUpdatedScores();
-  var timeout = setTimeout(returnToTraditionalView, 5000);
-} else if (classChecker(traditionalView, scissorsButton) === 'scissors-button') {
+  displayUpdatedScores();
+  var timeout = setTimeout(displayTraditionalView, 5000);
+} else if (event.target.classList.contains('resize-scissors-img') === true) {
   humanChoice = humanPlayer.humanTakeTurn('scissors');
   game.determineWinner(humanChoice);
   displayOutcome();
-  game.displayUpdatedScores();
-  var timeout = setTimeout(returnToTraditionalView, 5000);
+  displayUpdatedScores();
+  var timeout = setTimeout(displayTraditionalView, 5000);
   }
 })
 
-  // game.determineWinner(humanChoice)
-  //game.displayUpdatedScores()
-  // displayOutcome()
-  // timeout = setTimeout(returnToTraditionalView, 5000)
-
-
 extremeView.addEventListener('click', function(event) {
-  if (classChecker(traditionalView, rockButton) === 'rock-button') {
+  if (event.target.classList.contains('resize-rock-img') === true) {
   humanChoice = humanPlayer.humanTakeTurn('rock');
   game.determineWinner(humanChoice);
   displayOutcome();
-  game.displayUpdatedScores();
-  timeout;
-} else if (classChecker(traditionalView, paperButton) === 'paper-button') {
+  displayUpdatedScores();
+  var timeout = setTimeout(displayExtremeView, 5000);
+} else if (event.target.classList.contains('resize-paper-img') === true) {
   humanChoice = humanPlayer.humanTakeTurn('paper');
   game.determineWinner(humanChoice);
   displayOutcome();
-  game.displayUpdatedScores();
-  timeout;
-} else if (classChecker(traditionalView, scissorsButton) === 'scissors-button') {
+  displayUpdatedScores();
+  var timeout = setTimeout(displayExtremeView, 5000);
+} else if (event.target.classList.contains('resize-scissors-img') === true) {
   humanChoice = humanPlayer.humanTakeTurn('scissors');
   game.determineWinner(humanChoice);
   displayOutcome();
-  game.displayUpdatedScores();
-  timeout;
+  displayUpdatedScores();
+  var timeout = setTimeout(displayExtremeView, 5000);
+  } else if (event.target.classList.contains('resize-onepunchman-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('onepunchman');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    displayUpdatedScores();
+    var timeout = setTimeout(displayExtremeView, 5000);
+  } else if (event.target.classList.contains('resize-goku-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('goku');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    displayUpdatedScores();
+    var timeout = setTimeout(displayExtremeView, 5000);
+  } else if (event.target.classList.contains('resize-alien-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('alien');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    displayUpdatedScores();
+    var timeout = setTimeout(displayExtremeView, 5000);
+  } else if (event.target.classList.contains('resize-mosquito-img') === true) {
+    humanChoice = humanPlayer.humanTakeTurn('mosquito');
+    game.determineWinner(humanChoice);
+    displayOutcome();
+    displayUpdatedScores();
+    var timeout = setTimeout(displayExtremeView, 5000);
   }
 })
 
@@ -130,8 +144,6 @@ function displayOutcome() {
   hide(gameSelect);
   hide(styleHeadline);
   hide(combatantHeadline);
-
-  console.log("It works!")
 }
 
 function displayUpdatedScores() {
@@ -139,7 +151,7 @@ function displayUpdatedScores() {
 // Has to happen after displayOutcome() and resetScores();
 // Note: game.players[0].stats[stat] and game.players[1].stats[stat] should have this info
   // console.log(scores)
-  console.log('TBD')
+
 }
 
 function displayHomePage() {
@@ -158,11 +170,11 @@ function resetScores() {
 // and game.players[1].stats[stat] to zero
 // Should not reset game
 scores = game.resetStats()
-console.log(scores)
+displayUpdatedScores();
 }
 
-function classChecker(event, className) {
-var classname = event.target.classList.contains(className);
+function classChecker(id, className) {
+var classname = id.classList.contains(className);
 return classname;
 }
 
@@ -177,11 +189,22 @@ function displayTraditionalView() {
 }
 
 function displayExtremeView() {
-  show(extremeView)
+  show(extremeView);
   show(combatantHeadline);
   hide(styleHeadline);
   hide(traditionalView);
   hide(gameSelect);
   hide(gameResultView);
   hide(gameResultQuote);
+}
+
+function createNewGameExtreme() {
+    newGame('extreme');
+    displayExtremeView();
+  }
+
+
+function createNewGameTraditional() {
+    newGame('traditional');
+    displayTraditionalView();
 }
