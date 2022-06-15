@@ -21,14 +21,14 @@ var onepunchmanButton = document.querySelector('.onepunchman-button');
 var gokuButton = document.querySelector('.goku-button');
 var alienButton = document.querySelector('.alien-button');
 var moquitoButton = document.querySelector('.mosquito-button');
-var winDisplayPlayer1 = document.querySelector('.player1-text2')
-var winDisplayPlayer2 = document.querySelector('.player2-text2')
-var lossDisplayPlayer1 = document.querySelector('.player1-text3')
-var lossDisplayPlayer2 = document.querySelector('.player2-text3')
-var drawDisplayPlayer1 = document.querySelector('.player1-text4')
-var drawDisplayPlayer2 = document.querySelector('.player2-text4')
-var player1Image = document.querySelector('.playerImage1')
-var player2Image = document.querySelector('.playerImage2')
+var winDisplayPlayer1 = document.querySelector('.player1-text2');
+var winDisplayPlayer2 = document.querySelector('.player2-text2');
+var lossDisplayPlayer1 = document.querySelector('.player1-text3');
+var lossDisplayPlayer2 = document.querySelector('.player2-text3');
+var drawDisplayPlayer1 = document.querySelector('.player1-text4');
+var drawDisplayPlayer2 = document.querySelector('.player2-text4');
+var player1Image = document.querySelector('.playerImage1');
+var player2Image = document.querySelector('.playerImage2');
 
 var humanPlayer;
 var robotPlayer;
@@ -125,7 +125,8 @@ function displayOutcome() {
 }
 
 function displayHomePage() {
-  show(gameSelect)
+  show(gameSelect);
+  show(styleHeadline);
   hide(combatantHeadline);
   hide(traditionalView);
   hide(extremeView);
@@ -133,7 +134,7 @@ function displayHomePage() {
 }
 
 function resetScores() {
-  game.resetStats()
+  game.resetStats();
 }
 
 function classChecker(id, className) {
