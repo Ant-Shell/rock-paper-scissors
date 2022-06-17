@@ -23,14 +23,14 @@ class Game {
   determineWinner(humanChoice) {
   var player1Result = humanChoice;
   var player2Result = this.players[1].takeTurn(this.rules);
-  var winQuote = this.winQuoteDisplay(gameWinQuotes);
-  var loseQuote = this.lossQuoteDisplay(gameLossQuotes);
-  var drawQuote = this.drawQuoteDisplay(gameDrawQuotes);
+  // var winQuote = this.winQuoteDisplay(gameWinQuotes);
+  // var loseQuote = this.lossQuoteDisplay(gameLossQuotes);
+  // var drawQuote = this.drawQuoteDisplay(gameDrawQuotes);
 
   if (player1Result === player2Result) {
     this.players[0].stats.draws ++;
     this.players[1].stats.draws ++;
-    customQuote.innerText = `You and Robot picked ${player1Result}: ` + drawQuote ;
+    customQuote.innerText = `You and Robot picked ${player1Result}: ` + this.quoteGenerator(gameDrawQuotes);
     drawDisplayPlayer1.innerText = `Draws: ${this.players[0].stats.draws}`;
     drawDisplayPlayer2.innerText = `Draws: ${this.players[1].stats.draws}`;
     gameResultView.innerHTML = `
@@ -40,7 +40,7 @@ class Game {
   } else if (this.rules[player2Result].includes(player1Result)) {
     this.players[0].stats.losses ++;
     this.players[1].stats.wins ++;
-    customQuote.innerText = `Robot picked ${player2Result}: ` + loseQuote
+    customQuote.innerText = `Robot picked ${player2Result}: ` + this.quoteGenerator(gameLossQuotes);
     lossDisplayPlayer1.innerText = `Losses: ${this.players[0].stats.losses}`
     winDisplayPlayer2.innerText = `Wins: ${this.players[1].stats.wins}`
     gameResultView.innerHTML = `
@@ -50,7 +50,7 @@ class Game {
   } else {
     this.players[0].stats.wins ++;
     this.players[1].stats.losses ++;
-    customQuote.innerText = `You picked ${player1Result}: ` + winQuote
+    customQuote.innerText = `You picked ${player1Result}: ` + this.quoteGenerator(gameWinQuotes);
     winDisplayPlayer1.innerText = `Wins: ${this.players[0].stats.wins}`
     lossDisplayPlayer2.innerText = `Losses: ${this.players[1].stats.losses}`
     gameResultView.innerHTML = `
@@ -64,18 +64,8 @@ class Game {
   return Math.floor(Math.random() * array.length);
   }
 
-  lossQuoteDisplay(gameLossQuotes) {
-  var lossQuote = gameLossQuotes[this.getRandomIndex(gameLossQuotes)];
-    return lossQuote;
-  }
-
-  winQuoteDisplay(gameWinQuotes) {
-  var winQuote = gameWinQuotes[this.getRandomIndex(gameWinQuotes)];
-    return winQuote;
-  }
-
-  drawQuoteDisplay(gameDrawQuotes) {
-  var drawQuote = gameDrawQuotes[this.getRandomIndex(gameDrawQuotes)];
-    return drawQuote;
+  quoteGenerator(quoteArray) {
+    var quote = quoteArray[this.getRandomIndex(quoteArray)];
+      return quote;
     }
   }
