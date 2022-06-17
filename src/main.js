@@ -114,6 +114,16 @@ function newGame(type) {
   game.setup();
 }
 
+function createNewGameExtreme() {
+  newGame('extreme');
+  displayExtremeView();
+}
+
+function createNewGameTraditional() {
+  newGame('traditional');
+  displayTraditionalView();
+}
+
 function displayOutcome() {
   show(gameResultView);
   show(gameResultQuote);
@@ -160,14 +170,4 @@ function displayExtremeView() {
   hide(gameSelect);
   hide(gameResultView);
   hide(gameResultQuote);
-}
-
-function createNewGameExtreme() {
-  newGame('extreme');
-  displayExtremeView();
-}
-
-function createNewGameTraditional() {
-  newGame('traditional');
-  displayTraditionalView();
 }
