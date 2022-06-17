@@ -154,7 +154,6 @@ function displayHomePage() {
       game.players[i].stats['wins'] = 0;
       game.players[i].stats['losses'] = 0;
       game.players[i].stats['draws'] = 0;
-      console.log(playerStatsWins[0])
       playerStatsWins[i].innerText = `Wins: ${game.players[i].stats['wins']}`
       playerStatsLosses[i].innerText = `Losses: ${game.players[i].stats['losses']}`
       playerStatsDraws[i].innerText = `Draws: ${game.players[i].stats['draws']}`
