@@ -70,7 +70,7 @@ var gameLossQuotes = [
   "Rekt.",
   "Doh!",
   "Sorry, Not This Time.",
-  "You got Morbed On",
+  "You got Morbed On.",
 ];
 
 var gameDrawQuotes = [
