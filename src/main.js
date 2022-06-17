@@ -27,35 +27,38 @@ var lossDisplayPlayer1 = document.querySelector('.player1-text3');
 var lossDisplayPlayer2 = document.querySelector('.player2-text3');
 var drawDisplayPlayer1 = document.querySelector('.player1-text4');
 var drawDisplayPlayer2 = document.querySelector('.player2-text4');
+var playerStatsWins = document.querySelectorAll('.player-stats-wins');
+var playerStatsLosses = document.querySelectorAll('.player-stats-losses');
+var playerStatsDraws = document.querySelectorAll('.player-stats-draws');
 var player1Image = document.querySelector('.playerImage1');
 var player2Image = document.querySelector('.playerImage2');
 
 var humanPlayer;
 var robotPlayer;
-var game;
+var game = null;
 var humanChoice;
 var scores;
 
 traditionalModeButton.addEventListener('click', createNewGameTraditional)
 extremeModeButton.addEventListener('click', createNewGameExtreme)
 changeGameButton.addEventListener('click', displayHomePage)
-resetScoresButton.addEventListener('click', resetScores)
+resetScoresButton.addEventListener('click', resetStats)
 traditionalView.addEventListener('click', function(event) {
   if (event.target.classList.contains('resize-rock-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('rock');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayTraditionalView, 5000);
+    var timeout = setTimeout(displayTraditionalView, 3500);
   } else if (event.target.classList.contains('resize-paper-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('paper');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayTraditionalView, 5000);
+    var timeout = setTimeout(displayTraditionalView, 3500);
   } else if (event.target.classList.contains('resize-scissors-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('scissors');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayTraditionalView, 5000);
+    var timeout = setTimeout(displayTraditionalView, 3500);
   }
 })
 
@@ -64,37 +67,37 @@ extremeView.addEventListener('click', function(event) {
     humanChoice = humanPlayer.humanTakeTurn('rock');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayExtremeView, 5000);
+    var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-paper-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('paper');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayExtremeView, 5000);
+    var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-scissors-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('scissors');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayExtremeView, 5000);
+    var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-onepunchman-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('onepunchman');
   game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayExtremeView, 5000);
+    var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-goku-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('goku');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayExtremeView, 5000);
+    var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-alien-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('alien');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayExtremeView, 5000);
+    var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-mosquito-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('mosquito');
     game.determineWinner(humanChoice);
     displayOutcome();
-    var timeout = setTimeout(displayExtremeView, 5000);
+    var timeout = setTimeout(displayExtremeView, 3500);
   }
 })
 
@@ -143,8 +146,20 @@ function displayHomePage() {
   hide(gameResultView);
 }
 
-function resetScores() {
-  game.resetStats();
+  function resetStats() {
+    if (game === null) {
+      return;
+  } else {
+    for (var i = 0 ; i < game.players.length; i++) {
+      game.players[i].stats['wins'] = 0;
+      game.players[i].stats['losses'] = 0;
+      game.players[i].stats['draws'] = 0;
+      console.log(playerStatsWins[0])
+      playerStatsWins[i].innerText = `Wins: ${game.players[i].stats['wins']}`
+      playerStatsLosses[i].innerText = `Losses: ${game.players[i].stats['losses']}`
+      playerStatsDraws[i].innerText = `Draws: ${game.players[i].stats['draws']}`
+    }
+  }
 }
 
 function classChecker(id, className) {
