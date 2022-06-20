@@ -8,11 +8,6 @@ class Player {
     }
   }
 
-  chooseAvatar(avatar) {
-    this.avatar = avatar;
-  }
-
-
   humanTakeTurn(selection) {
     var player1Result = selection;
     if (player1Result === "rock") {
