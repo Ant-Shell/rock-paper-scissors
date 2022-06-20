@@ -33,8 +33,8 @@ var playerStatsDraws = document.querySelectorAll('.player-stats-draws');
 var player1Image = document.querySelector('.playerImage1');
 var player2Image = document.querySelector('.playerImage2');
 
-var humanPlayer;
-var robotPlayer;
+var humanPlayer = new Player('Human');
+var robotPlayer = new Player('Robot');
 var game = null;
 var humanChoice;
 var scores;
@@ -102,8 +102,6 @@ extremeView.addEventListener('click', function(event) {
 })
 
 function newGame(type) {
-  humanPlayer = new Player('Human');
-  robotPlayer = new Player('Robot');
   game = new Game(humanPlayer, robotPlayer, type);
   game.select();
   game.setup();
