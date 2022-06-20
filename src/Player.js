@@ -1,18 +1,12 @@
 class Player {
-  constructor(name, avatar) {
+  constructor(name) {
     this.name = name;
-    this.avatar = avatar || null;
     this.stats = {
       wins: 0,
       losses: 0,
       draws: 0,
     }
   }
-
-  chooseAvatar(avatar) {
-    this.avatar = avatar;
-  }
-
 
   humanTakeTurn(selection) {
     var player1Result = selection;
