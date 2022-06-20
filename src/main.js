@@ -116,37 +116,39 @@ function determineWinner(humanChoice) {
   var player1Result = humanChoice;
   var player2Result = game.players[1].takeTurn(game.rules);
 
-  if (player1Result === player2Result) {
-  game.players[0].stats.draws ++;
-  game.players[1].stats.draws ++;
-  customQuote.innerText = `You and Robot picked ${player1Result}: ` + game.quoteGenerator(gameDrawQuotes);
-  drawDisplayPlayer1.innerText = `Draws: ${game.players[0].stats.draws}`;
-  drawDisplayPlayer2.innerText = `Draws: ${game.players[1].stats.draws}`;
-  gameResultView.innerHTML = `
-    <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
-    <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
+  for (var i = 0 ; i < game.players.length; i++) {
+    if (player1Result === player2Result) {
+    game.players[i].stats.draws ++;
+    game.players[i].stats.draws ++;
+    customQuote.innerText = `You and Robot picked ${player1Result}: ` + game.quoteGenerator(gameDrawQuotes);
+    drawDisplayPlayer1.innerText = `Draws: ${game.players[i].stats.draws}`;
+    drawDisplayPlayer2.innerText = `Draws: ${game.players[i].stats.draws}`;
+    gameResultView.innerHTML = `
+      <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
+      <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
     `;
-} else if (game.rules[player2Result].includes(player1Result)) {
-  game.players[0].stats.losses ++;
-  game.players[1].stats.wins ++;
-  customQuote.innerText = `Robot picked ${player2Result}: ` + game.quoteGenerator(gameLossQuotes);
-  lossDisplayPlayer1.innerText = `Losses: ${game.players[0].stats.losses}`
-  winDisplayPlayer2.innerText = `Wins: ${game.players[1].stats.wins}`
-  gameResultView.innerHTML = `
-    <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
-    <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
+  } else if (game.rules[player2Result].includes(player1Result)) {
+    game.players[i].stats.losses ++;
+    game.players[i].stats.wins ++;
+    customQuote.innerText = `Robot picked ${player2Result}: ` + game.quoteGenerator(gameLossQuotes);
+    lossDisplayPlayer1.innerText = `Losses: ${game.players[i].stats.losses}`
+    winDisplayPlayer2.innerText = `Wins: ${game.players[i].stats.wins}`
+    gameResultView.innerHTML = `
+      <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
+      <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
     `;
-} else {
-  game.players[0].stats.wins ++;
-  game.players[1].stats.losses ++;
-  customQuote.innerText = `You picked ${player1Result}: ` + game.quoteGenerator(gameWinQuotes);
-  winDisplayPlayer1.innerText = `Wins: ${game.players[0].stats.wins}`
-  lossDisplayPlayer2.innerText = `Losses: ${game.players[1].stats.losses}`
-  gameResultView.innerHTML = `
-    <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
-    <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
+  } else {
+    game.players[i].stats.wins ++;
+    game.players[i].stats.losses ++;
+    customQuote.innerText = `You picked ${player1Result}: ` + game.quoteGenerator(gameWinQuotes);
+    winDisplayPlayer1.innerText = `Wins: ${game.players[i].stats.wins}`
+    lossDisplayPlayer2.innerText = `Losses: ${game.players[i].stats.losses}`
+    gameResultView.innerHTML = `
+      <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
+      <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
     `;
-  }
+    } 
+  } 
 }
 
 function resetStats() {
