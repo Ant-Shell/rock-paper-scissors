@@ -46,17 +46,17 @@ resetScoresButton.addEventListener('click', resetStats)
 traditionalView.addEventListener('click', function(event) {
   if (event.target.classList.contains('resize-rock-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('rock');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayTraditionalView, 3500);
   } else if (event.target.classList.contains('resize-paper-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('paper');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayTraditionalView, 3500);
   } else if (event.target.classList.contains('resize-scissors-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('scissors');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayTraditionalView, 3500);
   }
@@ -65,49 +65,41 @@ traditionalView.addEventListener('click', function(event) {
 extremeView.addEventListener('click', function(event) {
   if (event.target.classList.contains('resize-rock-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('rock');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-paper-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('paper');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-scissors-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('scissors');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-onepunchman-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('onepunchman');
-  game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-goku-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('goku');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-alien-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('alien');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-mosquito-img') === true) {
     humanChoice = humanPlayer.humanTakeTurn('mosquito');
-    game.determineWinner(humanChoice);
+    determineWinner(humanChoice);
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   }
 })
-
-function show(element) {
-  element.classList.remove("hidden");
-};
-
-function hide(element) {
-  element.classList.add("hidden");
-};
 
 function newGame(type) {
   humanPlayer = new Player('Human');
@@ -127,6 +119,66 @@ function createNewGameTraditional() {
   displayTraditionalView();
 }
 
+function determineWinner(humanChoice) {
+  var player1Result = humanChoice;
+  var player2Result = game.players[1].takeTurn(game.rules);
+
+  if (player1Result === player2Result) {
+  game.players[0].stats.draws ++;
+  game.players[1].stats.draws ++;
+  customQuote.innerText = `You and Robot picked ${player1Result}: ` + game.quoteGenerator(gameDrawQuotes);
+  drawDisplayPlayer1.innerText = `Draws: ${game.players[0].stats.draws}`;
+  drawDisplayPlayer2.innerText = `Draws: ${game.players[1].stats.draws}`;
+  gameResultView.innerHTML = `
+    <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
+    <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
+    `;
+} else if (game.rules[player2Result].includes(player1Result)) {
+  game.players[0].stats.losses ++;
+  game.players[1].stats.wins ++;
+  customQuote.innerText = `Robot picked ${player2Result}: ` + game.quoteGenerator(gameLossQuotes);
+  lossDisplayPlayer1.innerText = `Losses: ${game.players[0].stats.losses}`
+  winDisplayPlayer2.innerText = `Wins: ${game.players[1].stats.wins}`
+  gameResultView.innerHTML = `
+    <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
+    <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
+    `;
+} else {
+  game.players[0].stats.wins ++;
+  game.players[1].stats.losses ++;
+  customQuote.innerText = `You picked ${player1Result}: ` + game.quoteGenerator(gameWinQuotes);
+  winDisplayPlayer1.innerText = `Wins: ${game.players[0].stats.wins}`
+  lossDisplayPlayer2.innerText = `Losses: ${game.players[1].stats.losses}`
+  gameResultView.innerHTML = `
+    <img class="resize-img player1-image" src="./assets/${player1Result}.png" alt="${player1Result} avatar">
+    <img class="resize-img player2-image" src="./assets/${player2Result}.png" alt="${player2Result} avatar">
+    `;
+  }
+}
+
+function resetStats() {
+  if (game === null) {
+    return;
+} else {
+  for (var i = 0 ; i < game.players.length; i++) {
+    game.players[i].stats['wins'] = 0;
+    game.players[i].stats['losses'] = 0;
+    game.players[i].stats['draws'] = 0;
+    playerStatsWins[i].innerText = `Wins: ${game.players[i].stats['wins']}`
+    playerStatsLosses[i].innerText = `Losses: ${game.players[i].stats['losses']}`
+    playerStatsDraws[i].innerText = `Draws: ${game.players[i].stats['draws']}`
+    }
+  }
+}
+
+function show(element) {
+  element.classList.remove("hidden");
+};
+  
+function hide(element) {
+  element.classList.add("hidden");
+};
+
 function displayOutcome() {
   show(gameResultView);
   show(gameResultQuote);
@@ -144,26 +196,6 @@ function displayHomePage() {
   hide(traditionalView);
   hide(extremeView);
   hide(gameResultView);
-}
-
-  function resetStats() {
-    if (game === null) {
-      return;
-  } else {
-    for (var i = 0 ; i < game.players.length; i++) {
-      game.players[i].stats['wins'] = 0;
-      game.players[i].stats['losses'] = 0;
-      game.players[i].stats['draws'] = 0;
-      playerStatsWins[i].innerText = `Wins: ${game.players[i].stats['wins']}`
-      playerStatsLosses[i].innerText = `Losses: ${game.players[i].stats['losses']}`
-      playerStatsDraws[i].innerText = `Draws: ${game.players[i].stats['draws']}`
-    }
-  }
-}
-
-function classChecker(id, className) {
-  var classname = id.classList.contains(className);
-  return classname;
 }
 
 function displayTraditionalView() {
