@@ -45,18 +45,15 @@ changeGameButton.addEventListener('click', displayHomePage)
 resetScoresButton.addEventListener('click', resetStats)
 traditionalView.addEventListener('click', function(event) {
   if (event.target.classList.contains('resize-rock-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('rock');
-    determineWinner(humanChoice);
+    determineWinner('rock');
     displayOutcome();
     var timeout = setTimeout(displayTraditionalView, 3500);
   } else if (event.target.classList.contains('resize-paper-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('paper');
-    determineWinner(humanChoice);
+    determineWinner('paper');
     displayOutcome();
     var timeout = setTimeout(displayTraditionalView, 3500);
   } else if (event.target.classList.contains('resize-scissors-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('scissors');
-    determineWinner(humanChoice);
+    determineWinner('scissors');
     displayOutcome();
     var timeout = setTimeout(displayTraditionalView, 3500);
   }
@@ -64,42 +61,40 @@ traditionalView.addEventListener('click', function(event) {
 
 extremeView.addEventListener('click', function(event) {
   if (event.target.classList.contains('resize-rock-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('rock');
-    determineWinner(humanChoice);
+    determineWinner('rock');
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-paper-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('paper');
-    determineWinner(humanChoice);
+    determineWinner('paper');
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-scissors-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('scissors');
-    determineWinner(humanChoice);
+    determineWinner('scissors');
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-onepunchman-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('onepunchman');
-    determineWinner(humanChoice);
+    determineWinner('onepunchman');
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-goku-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('goku');
-    determineWinner(humanChoice);
+    determineWinner('goku');
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-alien-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('alien');
-    determineWinner(humanChoice);
+    determineWinner('alien');
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   } else if (event.target.classList.contains('resize-mosquito-img') === true) {
-    humanChoice = humanPlayer.humanTakeTurn('mosquito');
-    determineWinner(humanChoice);
+    determineWinner('mosquito');
     displayOutcome();
     var timeout = setTimeout(displayExtremeView, 3500);
   }
 })
+
+function humanChoiceProvider(choice) {
+  humanChoice = humanPlayer.humanTakeTurn(choice)
+  return humanChoice;
+}
 
 function newGame(type) {
   game = new Game(humanPlayer, robotPlayer, type);
