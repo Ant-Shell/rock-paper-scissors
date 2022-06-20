@@ -36,8 +36,8 @@ var player2Image = document.querySelector('.playerImage2');
 var humanPlayer = new Player('Human');
 var robotPlayer = new Player('Robot');
 var game = null;
-var humanChoice;
-var scores;
+var humanChoice = null;
+var scores = null;
 
 traditionalModeButton.addEventListener('click', createNewGameTraditional)
 extremeModeButton.addEventListener('click', createNewGameExtreme)
